@@ -1,13 +1,18 @@
 * { margin:0;
     padding:0;
     box-sizing: border-box;
+    
 }
+
+$mainBlue: red;
 
 .section {
     width:100%;
     padding: 25px;
     min-height: 100vh;
+    background-color: $mainBlue;
 }
+
 
 .grid-50{
     display: flex;
