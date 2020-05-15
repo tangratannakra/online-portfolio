@@ -1,11 +1,14 @@
-# Ignore node_modules folder
+# dependencies
 node_modules
 
-# Ignore all text files
-#*.txt
+# production
+build
 
-# Ignore files related to API keys
-.env
+# misc
+.DS_Store
 
-# Ignore SASS config files
-.sass-cache
+npm-debug.log
+yarn-error.log
+yarn.lock
+.yarnclean
+.vscode
