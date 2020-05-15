@@ -1,17 +1,11 @@
-@define-mixin atSmall {
-    @media (min-width: 768px){
-        @mixin-content;
-    }
-}
-
 .section {
     width:100%;
     padding: 25px;
     min-height: 100vh;
-    background-color: $mainBlue;
+    background-color: #fdfdfd;
 
-    @mixin atSmall{
-        background-color: red;
-        color: white;
+    @include minSmall{
+        //background-color: red;
+        color: black;
     }
 }

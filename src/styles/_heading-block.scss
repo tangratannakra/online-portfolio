@@ -1,0 +1,21 @@
+#heading-block {
+    position: relative;
+    text-align: right;
+    width:100%;
+    min-height:100vh;
+   
+    @include minSmall {
+        text-align: right;
+        
+        float: right;
+        padding-right: 15%;
+    }
+
+    h4.keywords {
+        @include minSmall {
+           transform: rotate(-90deg);
+           position: absolute;
+           left: 0px;
+        }
+    }
+}

@@ -1,11 +1,97 @@
 * { margin:0;
     padding:0;
     box-sizing: border-box;
+    margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
 }
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+p {
+    line-height: 1.6rem;
+}
+
+h1 {
+    font-weight: 300;
+    font-size: 3.5rem;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 2.25rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: 1.1rem;
+}
+
+h5 {
+    font-size: 0.9rem;
+}
+
+h6 {
+    font-size: 0.7rem;
+}
+
+sub {
+    font-size: 0.8rem;
+    position: relative;
+    top: 0.5rem;
+}
+
+sup {
+    font-size: 0.8rem;
+    position: relative;
+    top: -0.5rem;
+}
+
+blockquote {
+    //border-left: solid (_size(border-width) * 4);
+    font-style: italic;
+    //margin: 0 0 _size(element-margin) 0;
+    //padding: (_size(element-margin) / 4) 0 (_size(element-margin) / 4) _size(element-margin);
+}
+
+hr {
+    border: 0;
+    //border-bottom: solid _size(border-width);
+    // margin: (_size(element-margin) * 1.25) 0;
+
+    // &.major {
+    //     //margin: (_size(element-margin) * 1.75) 0;
+    // }
+}
+
+.align-left {
+    text-align: left;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.align-right {
+    text-align: right;
+}
+
+
 
 .grid-50{
     display: flex;
     flex-direction: column;
+
+    @include minSmall {
+        flex-direction: row;
+    }
 }
 
 .right {
@@ -17,5 +103,5 @@
 
 }
 #tech-stack{
-    border-right: 1px solid $mainBlue;
+    border-right: 1px solid black;
 }

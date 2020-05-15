@@ -1,6 +1,14 @@
-$body-color: slateblue;
+/* main vars */
 
-body {
-  color: $body-color;
-  font-family: sans-serif;
-}
+/* font-family: 'Montserrat', sans-serif;*/
+$mainBlue: rgb(41, 41, 41);
+
+/*---- Imports of Modules ----*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,600;0,700;1,400&display=swap');
+@import '_mixins';
+@import '_main';
+
+@import '_heading-block';
+@import '_section';
+
+
