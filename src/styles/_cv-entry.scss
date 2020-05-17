@@ -1,0 +1,21 @@
+.cv-entry {
+    padding: 25px 0px;
+
+    @include minSmall {
+        padding-left: 25px;
+    }
+    
+    &__title {
+        padding-left: 25px;
+    }
+
+    &__date { 
+        padding-left: 25px;
+        border-left: 1px solid grey;
+    }
+
+    &__description {
+        padding-left: 25px;
+        border-left: 1px solid grey;
+    }
+}
