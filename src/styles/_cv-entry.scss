@@ -9,6 +9,7 @@
     &__title {
         padding-left: 25px;
         position: relative;
+        h1 {font-size: 1.5rem }
 
         &::before{
             content: "";
@@ -26,6 +27,7 @@
 
     &__date { 
         padding-left: 25px;
+        padding-bottom: 10px;
         border-left: 1px solid grey;
     }
 
