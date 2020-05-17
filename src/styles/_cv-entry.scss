@@ -1,0 +1,38 @@
+.cv-entry {
+    padding: 15px 0px;
+   
+
+    @include minSmall {
+        padding-left: 25px;
+    }
+    
+    &__title {
+        padding-left: 25px;
+        position: relative;
+        h1 {font-size: 1.5rem }
+
+        &::before{
+            content: "";
+            position: absolute;
+            left: -0.25rem;
+            top: 50%;
+            display: inline-block;
+            border-radius: 50%;
+            height: 0.5rem;
+            width: 0.5rem;
+            margin-right: 0.5rem;
+            background-color: #bdbdbd;
+        }
+    }
+
+    &__date { 
+        padding-left: 25px;
+        padding-bottom: 10px;
+        border-left: 1px solid grey;
+    }
+
+    &__description {
+        padding-left: 25px;
+        border-left: 1px solid grey;
+    }
+}
