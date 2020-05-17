@@ -8,4 +8,20 @@
         //background-color: red;
         color: black;
     }
+
+    &__left { 
+        @include minSmall {
+            border-right: 1px solid black;
+            width:50%;
+            padding-right:25px;
+        }
+    }
+
+    &__right {
+        
+        @include minSmall {
+            padding-left:25px;
+            width:50%;
+        }
+    }
 }
