@@ -1,0 +1,13 @@
+.github {
+    &__title {
+        h1 {
+            font-size: 1.5rem;
+        }
+    }
+
+    &__thumb {
+        img {
+            max-width: 100%;
+        }
+    }
+}

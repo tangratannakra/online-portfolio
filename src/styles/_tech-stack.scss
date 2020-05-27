@@ -1,16 +1,17 @@
-.tech-stack{
+.tech-stack {
 
     &__ul {
         list-style: none;
 
         ul {
-            padding-bottom:15px;
+            padding-bottom: 15px;
         }
 
         li {
-            display: inline;
+            display: inline-block;
             font-size: 1.2rem;
             font-weight: 600;
+            padding-bottom: 25px;
 
             &:after {
                 content: " / ";
@@ -18,5 +19,5 @@
         }
 
     }
-    
+
 }
