@@ -1,4 +1,4 @@
-import buildProject from './githubprojects';
+import buildProject from './githubProjects';
 
 //Fetching data from Github
 const axios = require('axios');

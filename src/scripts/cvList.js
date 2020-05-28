@@ -25,9 +25,10 @@ class cvList {
         }
     }
 
+
     buildList(data) {
         data.forEach(entry => {
-
+            //const cvElement = new cvEntry(entry);
             cvContainer.appendChild(new cvEntry(entry));
         });
     }
