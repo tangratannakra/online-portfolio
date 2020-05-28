@@ -1,13 +1,8 @@
 //Default imports
 import '../styles/index.scss';
-import axiosCall from './serveGithub'; //github fetch
+
 import cvList from './cvList';
+import gitHubProjects from './githubprojects';
 
 const cv = new cvList();
-
-// secondSection.addEventListener('scroll', () => {
-//     if (addCvList === undefined) {
-//         addCvList = true;
-//         
-//     }
-// });
+const gitHubPrjs = new gitHubProjects();

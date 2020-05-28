@@ -7,7 +7,7 @@ let reveal;
 
 class cvList {
     constructor() {
-        this.scrollThrottle = throttle(this.revealOnScroll, 500).bind(this);
+        this.scrollThrottle = throttle(this.revealOnScroll, 200).bind(this);
         this.events();
     };
 
@@ -25,10 +25,9 @@ class cvList {
         }
     }
 
-
     buildList(data) {
         data.forEach(entry => {
-            //const cvElement = new cvEntry(entry);
+
             cvContainer.appendChild(new cvEntry(entry));
         });
     }

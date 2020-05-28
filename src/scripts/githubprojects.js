@@ -1,25 +1,82 @@
+import gitProject from './githubProject';
+import throttle from 'lodash/throttle';
+//import gitRequest from './serveGithub-delete'; //github fetch
+
 const gitContainer = document.getElementById('github-projects');
 
-let buildProject = (data) => {
-    const projectContainer = document.createElement('div');
-    projectContainer.className = 'github';
-    gitContainer.appendChild(projectContainer);
-    projectContainer.innerHTML = `
-        <div class="github__title">
-            <h1>
-                <a href="${data.homepageUrl}" target="_blank">${data.name}</a>
-            </h1>
-        </div>
-        <div class="github--description">
-            <p>${data.description}</p>
-        </div>
-        `;
+//Fetching data from Github
+const axios = require('axios');
+const githubUrl = 'https://api.github.com/graphql';
+const token = '80b38618af5b02a0cb068d874ff080c24b01fc34';
+const oauth = {
+    Authorization: 'bearer ' + token
 };
 
-export default buildProject;
+let served;
+const query = `{
+    repositoryOwner(login: "tangratannakra") {
+      ... on ProfileOwner {
+        pinnedItemsRemaining
+        itemShowcase {
+          items(first: 10) {
+            totalCount
+            edges {
+              node {
+                ... on Repository {
+                  name
+                  description
+                  homepageUrl
+                  languages(first: 10) {
+                    totalCount
+                  }
+                }
+              }
+            }
+          }
+          hasPinnedItems
+        }
+      }
+    }
+  }`;
 
+class gitHubContainer {
+    constructor() {
+        this.scrollThrottle = throttle(this.revealOnScroll, 200).bind(this);
+        this.events();
+    }
 
-/* <div class="github__thumb"><img
-            src="https://banner2.cleanpng.com/20180214/tow/kisspng-organization-child-enterprise-resource-planning-ma-square-shape-cliparts-5a849f82ab0459.4031530415186410267005.jpg"
-            alt="" />
-        </div> */
+    revealOnScroll() {
+        if (served === undefined) {
+            let scrollPercent = (gitContainer.getBoundingClientRect().y / window.innerHeight) * 100;
+            if (scrollPercent < 90) {
+                served = true;
+                this.gitRequest();
+            }
+        }
+    }
+
+    events() {
+        window.addEventListener('scroll', this.scrollThrottle);
+    }
+
+    gitRequest() {
+        axios.post(githubUrl, {
+                query: query
+            }, {
+                headers: oauth
+            })
+            .then(function (response) {
+                const gitProj = response.data.data.repositoryOwner.itemShowcase.items.edges; //arr
+
+                gitProj.forEach(prj => {
+                    gitContainer.appendChild(new gitProject(prj.node));
+                });
+
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    };
+}
+
+export default gitHubContainer;

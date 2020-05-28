@@ -36,9 +36,7 @@ const query = `{
     }
   }`;
 
-export default document.addEventListener("scroll", (e) => {
-  gitRequest();
-});
+
 
 function gitRequest() {
   if (served === undefined) {
@@ -50,6 +48,7 @@ function gitRequest() {
       })
       .then(function (response) {
         const gitProj = response.data.data.repositoryOwner.itemShowcase.items.edges; //arr
+        console.log(response);
         gitProj.forEach(prj => {
           buildProject(prj.node);
         });
@@ -61,4 +60,6 @@ function gitRequest() {
   } else if (served === true) {
     //console.log('already served');
   }
-}
+};
+
+export default gitRequest;
