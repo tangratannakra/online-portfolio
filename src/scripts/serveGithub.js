@@ -8,6 +8,7 @@ const oauth = {
   Authorization: 'bearer ' + token
 };
 
+let served;
 // GraphQL query to Github API
 const query = `{
     repositoryOwner(login: "tangratannakra") {
@@ -35,18 +36,29 @@ const query = `{
     }
   }`;
 
-// Making the call to Github
-export default axios.post(githubUrl, {
-    query: query
-  }, {
-    headers: oauth
-  })
-  .then(function (response) {
-    const gitProj = response.data.data.repositoryOwner.itemShowcase.items.edges; //arr
-    gitProj.forEach(prj => {
-      buildProject(prj.node);
-    });
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
+export default document.addEventListener("scroll", (e) => {
+  gitRequest();
+});
+
+function gitRequest() {
+  if (served === undefined) {
+    served = true;
+    axios.post(githubUrl, {
+        query: query
+      }, {
+        headers: oauth
+      })
+      .then(function (response) {
+        const gitProj = response.data.data.repositoryOwner.itemShowcase.items.edges; //arr
+        gitProj.forEach(prj => {
+          buildProject(prj.node);
+        });
+
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  } else if (served === true) {
+    //console.log('already served');
+  }
+}
