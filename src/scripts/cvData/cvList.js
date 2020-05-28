@@ -1,4 +1,4 @@
-import cvData from './data/cvData';
+import cvData from './cvData';
 import cvEntry from './cvEntry';
 import throttle from 'lodash/throttle';
 

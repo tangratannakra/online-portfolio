@@ -1,8 +1,8 @@
 //Default imports
 import '../styles/index.scss';
 
-import cvList from './cvList';
-import gitHubProjects from './githubProjects';
+import cvList from './cvData/cvList';
+import gitHubProjects from './gitHubPr/githubProjects';
 import RevealOnScroll from './revealOnScroll';
 
 import RecentProjects from './recentProjects/recentProjects';
