@@ -1,7 +1,6 @@
 import gitProject from './githubProject';
 import throttle from 'lodash/throttle';
 import debounce from 'lodash/debounce';
-//import gitRequest from './serveGithub-delete'; //github fetch
 
 const gitContainer = document.getElementById('github-projects');
 
@@ -51,7 +50,7 @@ class GitHubContainer {
     if (served === undefined) {
       if (window.scrollY + this.browserHeight > gitContainer.offsetTop) {
         let scrollPercent = (gitContainer.getBoundingClientRect().top / this.browserHeight) * 100;
-        if (scrollPercent < 90) {
+        if (scrollPercent < 95) {
           served = true;
           this.gitRequest();
         }

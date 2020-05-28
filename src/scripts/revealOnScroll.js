@@ -20,6 +20,7 @@ class RevealOnScroll {
 
     calcCaller() {
         this.itemsToReveal.forEach(el => {
+            console.log('blah');
             if (el.isRevealed == false) {
                 this.calculateIfScrolledTo(el);
             }
