@@ -1,7 +1,14 @@
 .github {
+    margin-bottom: 25px;
+
+    &:last-child {
+        margin-bottom: 0px;
+    }
+
     &__title {
         h1 {
             font-size: 1.5rem;
+            margin-bottom: 5px;
         }
     }
 

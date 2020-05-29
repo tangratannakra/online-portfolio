@@ -1,0 +1,23 @@
+.certificates-entry {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+
+    &__thumb {
+        margin-right: 25px;
+
+        img {
+            width: 50px;
+            max-height: 100px;
+        }
+    }
+
+    &__title {
+
+
+        h1 {
+            font-size: 1.2rem;
+            margin-bottom: 0px;
+        }
+    }
+}

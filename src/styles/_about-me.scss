@@ -1,3 +1,9 @@
+#about-me {
+    @include minSmall {
+        padding: 0px 20vw;
+    }
+}
+
 .about-me {
     position: relative;
 
@@ -20,6 +26,7 @@
     }
 
     &__social {
+        float: right;
 
         h4 {
             display: block;
