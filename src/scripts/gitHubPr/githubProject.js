@@ -3,9 +3,15 @@ class gitProject {
         return this.buildGitEntry(data);
     }
 
+    animateElements() {
+        let toRevealElements = document.querySelector('.github__title');
+        console.log(toRevealElements);
+    }
+
+
     buildGitEntry(data) {
         const projectContainer = document.createElement('div');
-        projectContainer.className = 'github';
+        projectContainer.classList = 'github reveal';
         projectContainer.innerHTML = `
                     <div class="github__title">
                         <h1>
@@ -19,6 +25,7 @@ class gitProject {
 
         return projectContainer;
     }
+
 }
 
 export default gitProject;

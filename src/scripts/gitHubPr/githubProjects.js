@@ -1,4 +1,4 @@
-import gitProject from './githubProject';
+import GitProject from './githubProject';
 import throttle from 'lodash/throttle';
 import debounce from 'lodash/debounce';
 
@@ -54,10 +54,6 @@ class GitHubContainer {
           served = true;
           this.gitRequest();
         }
-        // let scrollPercent = (gitContainer.getBoundingClientRect().y / window.innerHeight) * 100;
-        // if (scrollPercent < 90) {
-        //   served = true;
-        //   this.gitRequest();
       }
     }
   }
@@ -79,14 +75,22 @@ class GitHubContainer {
         const gitProj = response.data.data.repositoryOwner.itemShowcase.items.edges; //arr
 
         gitProj.forEach(prj => {
-          gitContainer.appendChild(new gitProject(prj.node));
+          let gitProject = new GitProject(prj.node);
+          gitContainer.appendChild(gitProject);
+          setTimeout(() => {
+            gitProject.className = 'github reveal--is-visible';
+          }, 1000);
+
         });
 
       })
       .catch(function (error) {
         console.log(error);
       });
+
+
   };
+
 }
 
 export default GitHubContainer;

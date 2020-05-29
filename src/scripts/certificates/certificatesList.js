@@ -11,7 +11,7 @@ class RecentProjects {
 
     buildPrList(data) {
         data.forEach(entry => {
-            console.log(entry);
+
             recentPrContainer.appendChild(new CertificateEntry(entry));
         });
     }

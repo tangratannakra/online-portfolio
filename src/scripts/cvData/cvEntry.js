@@ -13,7 +13,7 @@ class cvEntry {
     </div>
     <div class="cv-entry__date">${data.date}</div>
     <div class="cv-entry__description">
-      <p>d${data.description}</p>
+      <p>${data.description}</p>
     </div>
     `;
     return cvEntryElement;
