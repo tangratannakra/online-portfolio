@@ -7,13 +7,8 @@ class AnimatedObject {
         console.log(classhandler);
         let toAnimateElement = document.querySelector(`.${classhandler}`);
         console.log(toAnimateElement);
-        toAnimateElement.classList += ` ${addClass}`;
+        toAnimateElement.classList.add(`${addClass}`);
     }
-
-    events() {
-
-    }
-
 
 }
 

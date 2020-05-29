@@ -1,0 +1,42 @@
+.about-me {
+    position: relative;
+
+    &__thumb {
+        position: relative;
+        top: -15px;
+        left: -15px;
+        float: left;
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        background-color: blue;
+        shape-outside: circle(50%);
+        padding: 20px;
+        // margin: 0px 20px 10px 0px;
+    }
+
+    &__description {
+        margin-bottom: 25px;
+    }
+
+    &__social {
+
+        h4 {
+            display: block;
+            width: 100%;
+        }
+
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    &__icon {
+        margin: 10px;
+
+        &:first-child {
+            margin: 10px 10px 10px 0px;
+        }
+    }
+
+}

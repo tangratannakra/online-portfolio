@@ -16,4 +16,4 @@ const gitHubPrjs = new gitHubProjects();
 const recentPr = new RecentProjects;
 const certificatesList = new CertificatesList();
 
-const animateHeadingBlockSubtitle = new AnimateDomElement('heading-block__subtitle', 'transitionX');
+const animateHeadingBlockSubtitle = new AnimateDomElement('reveal', 'reveal--is-visible');

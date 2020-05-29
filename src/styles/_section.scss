@@ -1,32 +1,60 @@
 .section {
-    width:100%;
-    padding:50px 25px;
+    width: 100%;
+    padding: 50px 25px;
     // min-height: 100vh;
     background-color: #fdfdfd;
 
     h1 {
-        margin-bottom:25px;
+        margin-bottom: 25px;
     }
 
-    @include minSmall{
+    @include minSmall {
         //background-color: red;
         color: black;
     }
 
     &__left {
+        margin-bottom: 25px;
+
+        @include minSmall {
+            margin-bottom: 0px;
+        }
+
+        &>div {
+            margin-bottom: 25px;
+
+            &:last-child {
+                margin-bottom: 0px;
+            }
+        }
+
+        padding-top: 25px;
+
         // min-height: 100vh; 
         @include minSmall {
+            padding-top: 0px;
             border-right: 1px solid black;
-            width:50%;
-            padding-right:25px;
+            width: 50%;
+            padding-right: 25px;
         }
     }
 
     &__right {
+        &>div {
+            margin-bottom: 25px;
+
+            &:last-child {
+                margin-bottom: 0px;
+            }
+        }
+
+        padding-top: 25px;
+
         // min-height: 100vh;
         @include minSmall {
-            padding-left:25px;
-            width:50%;
+            padding-top: 0px;
+            padding-left: 25px;
+            width: 50%;
         }
     }
 }
