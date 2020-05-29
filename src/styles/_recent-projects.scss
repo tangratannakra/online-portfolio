@@ -9,7 +9,7 @@
     flex-direction: column;
 
     @include minSmall {
-        width: 50%;
+        width: 30%;
 
         &:nth-child(odd) {
             padding-right: 10px;
