@@ -7,6 +7,20 @@
     @include minSmall {}
 }
 
+.about-me__section,
+.about-me__social {
+    &:hover {
+        h2 {
+            &:after {
+                content: ' ';
+                width: 100%;
+                transition: width 0.3s ease-out;
+            }
+        }
+
+    }
+}
+
 .about-me {
     position: relative;
 
@@ -27,13 +41,13 @@
         }
     }
 
-    h2:hover {
-        &:after {
-            content: ' ';
-            width: 100%;
-            transition: width 0.3s ease-out;
-        }
-    }
+    // h2:hover {
+    //     &:after {
+    //         content: ' ';
+    //         width: 100%;
+    //         transition: width 0.3s ease-out;
+    //     }
+    // }
 
     &__heading {
         display: flex;

@@ -21,8 +21,10 @@
         background-color: #85FFBD;
         background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
 
+
+
         background-blend-mode: screen, overlay;
-        transition: background-color 1s ease-in-out;
+        transition: background-color 0.5s ease-in-out;
     }
 
     h1 {
