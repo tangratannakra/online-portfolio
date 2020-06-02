@@ -5,7 +5,10 @@
     background-color: #fdfdfd;
 
     &:hover {
-        background-color: grey;
+        //background-color: grey;
+        //background-color: #CDDCDC;
+        background: radial-gradient(circle at center, rgba(255, 255, 255, 1) 0%, rgba(234, 234, 234, 1) 100%);
+        background-blend-mode: screen, overlay;
         transition: background-color 0.5s ease-in-out;
     }
 
