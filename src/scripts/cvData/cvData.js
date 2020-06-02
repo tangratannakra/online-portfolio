@@ -1,7 +1,7 @@
 const cvData = [{
-        title: 'Title',
+        title: 'Front-End Developer',
         date: 'Date',
-        description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate aperiam, sapiente molestias necessitatibus veritatis quos autem laborum impedit rem provident.'
+        description: '- Developing and maintaining websites using WordPress / WooCommerce as CMS. Developing WordPress themes using HTML / CSS / JS. Wordpress customization. Creative work for ads. Logo and Brand identity design. Constant self-development through learnig and personal open sourse project with JS and React;'
     },
     {
         title: 'Title2',

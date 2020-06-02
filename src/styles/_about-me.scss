@@ -1,4 +1,7 @@
 #about-me {
+    display: flex;
+    flex-direction: column;
+
     @include minSmall {}
 }
 
@@ -6,15 +9,17 @@
     position: relative;
 
     &__thumb {
-        position: relative;
-        top: -15px;
-        left: -15px;
-        border-radius: 50%;
-        width: 150px;
-        height: 150px;
-        background-color: blue;
-        padding: 20px;
-        // margin: 0px 20px 10px 0px;
+        margin-bottom: 25px;
+        display: flex;
+        justify-content: center;
+
+        img {
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            background-color: white;
+            padding: 5px;
+        }
     }
 
     &__description {
