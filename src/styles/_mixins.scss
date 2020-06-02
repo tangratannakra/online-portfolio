@@ -1,5 +1,11 @@
-@mixin minSmall{
-    @media (min-width:768px){
+@mixin minSmall {
+    @media (min-width:768px) {
+        @content;
+    }
+}
+
+@mixin minLarge {
+    @media (min-width:1200px) {
         @content;
     }
 }

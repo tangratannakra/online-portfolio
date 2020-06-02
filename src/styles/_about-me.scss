@@ -10,15 +10,49 @@
 .about-me {
     position: relative;
 
-    &__thumb {
-        margin-bottom: 25px;
+    h2 {
+        font-size: 1.3rem;
+        margin-top: 25px;
+        margin-bottom: 10px;
+        position: relative;
+        display: inline-block;
+
+        &:after {
+            content: ' ';
+            width: 10px;
+            border-bottom: 3px solid black;
+            position: absolute;
+            bottom: -5px;
+            left: 0px;
+        }
+    }
+
+    h2:hover {
+        &:after {
+            content: ' ';
+            width: 100%;
+            transition: width 0.3s ease-out;
+        }
+    }
+
+    &__heading {
         display: flex;
+        flex-direction: column;
         justify-content: center;
 
         @include minSmall {
-            position: relative;
-            float: left;
-            justify-content: start;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+    }
+
+    &__thumb {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 25px;
+
+        @include minSmall {
             padding-right: 25px;
         }
 
@@ -30,39 +64,17 @@
             padding: 5px;
         }
 
-
     }
 
     &__description {
         margin-bottom: 25px;
 
+        p.heading {
+            width: 70%;
+        }
+
         @include minSmall {
             margin-top: 30px;
-        }
-
-        h2 {
-            font-size: 1.3rem;
-            margin-top: 25px;
-            margin-bottom: 10px;
-            position: relative;
-            display: inline-block;
-
-            &:after {
-                content: ' ';
-                width: 10px;
-                border-bottom: 3px solid black;
-                position: absolute;
-                bottom: -5px;
-                left: 0px;
-            }
-        }
-
-        h2:hover {
-            &:after {
-                content: ' ';
-                width: 100%;
-                transition: width 0.5s ease-out;
-            }
         }
 
         ul {
@@ -78,15 +90,12 @@
     }
 
     &__social {
+        margin-bottom: 25px;
+    }
 
-        h4 {
-            display: block;
-            width: 100%;
-        }
-
+    &__icon-container {
         display: flex;
-        flex-wrap: wrap;
-        align-items: center;
+        margin-bottom: 25px;
     }
 
     &__icon {
@@ -95,6 +104,9 @@
         &:first-child {
             margin: 10px 10px 10px 0px;
         }
-    }
 
+        img {
+            filter: grayscale(0.5);
+        }
+    }
 }

@@ -3,13 +3,26 @@
     padding: 50px 25px;
     // min-height: 100vh;
     background-color: #fdfdfd;
+    background-image: none;
+
+
+
+    &--big {
+        @include minLarge {
+            padding: 50px 10%;
+        }
+    }
 
     &:hover {
         //background-color: grey;
         //background-color: #CDDCDC;
-        background: radial-gradient(circle at center, rgba(255, 255, 255, 1) 0%, rgba(234, 234, 234, 1) 100%);
+        // background: radial-gradient(circle at center, rgba(255, 255, 255, 1) 0%, rgba(234, 234, 234, 1) 100%);
+
+        background-color: #85FFBD;
+        background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
+
         background-blend-mode: screen, overlay;
-        transition: background-color 0.5s ease-in-out;
+        transition: background-color 1s ease-in-out;
     }
 
     h1 {
