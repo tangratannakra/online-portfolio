@@ -2,6 +2,8 @@
     display: flex;
     flex-direction: column;
 
+
+
     @include minSmall {}
 }
 
@@ -20,10 +22,46 @@
             background-color: white;
             padding: 5px;
         }
+
+
     }
 
     &__description {
         margin-bottom: 25px;
+
+        h2 {
+            font-size: 1.3rem;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+
+            &:after {
+                content: ' ';
+                width: 10px;
+                border-bottom: 3px solid black;
+                position: absolute;
+                bottom: -5px;
+                left: 0px;
+            }
+        }
+
+        h2:hover {
+            &:after {
+                content: ' ';
+                width: 100%;
+                transition: width 0.5s ease-out;
+            }
+        }
+
+        ul {
+            padding-left: 20px;
+            margin: 25px 0px;
+        }
+
+        li {
+            padding-bottom: 10px;
+        }
     }
 
     &__social {
