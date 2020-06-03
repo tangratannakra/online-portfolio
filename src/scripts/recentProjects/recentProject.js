@@ -9,11 +9,11 @@ class RecentProject {
 
     recentPrElement.innerHTML = `
     <div class="recentPr-entry__thumb">
-      <a href="${data.url}" target="__blank"><img src="${data.thumb}"alt ="project thumb"></a>
+      <img src="${data.thumb}"alt ="project thumb">
     </div>
     <div class="recentPr-entry__hover">
       <div class="recentPr-entry__title">
-        <h1>${data.title}</h1>
+        <h1><a href="${data.url}" target="__blank">${data.title}</a></h1>
       </div>
       <div class="recentPr-entry__description">
         <p>${data.description}</p>
