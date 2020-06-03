@@ -11,13 +11,16 @@ class RecentProject {
     <div class="recentPr-entry__thumb">
       <a href="${data.url}" target="__blank"><img src="${data.thumb}"alt ="project thumb"></a>
     </div>
-    <div class="recentPr-entry__title"><h1>${data.title}</h1></div>
-    <div class="recentPr-entry__description">
-      <p>${data.description}</p>
+    <div class="recentPr-entry__hover">
+      <div class="recentPr-entry__title">
+        <h1>${data.title}</h1>
+      </div>
+      <div class="recentPr-entry__description">
+        <p>${data.description}</p>
+      </div>
     </div>
     `;
     return recentPrElement;
-
   }
 }
 
