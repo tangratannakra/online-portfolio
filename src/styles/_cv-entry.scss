@@ -1,7 +1,6 @@
 .cv-entry {
     padding: 15px 0px;
 
-
     @include minSmall {
         padding-left: 25px;
     }
@@ -11,7 +10,8 @@
         position: relative;
 
         h1 {
-            font-size: 1.5rem
+            font-size: 1.5rem;
+            font-weight: normal;
         }
 
         &::before {
@@ -32,14 +32,20 @@
         padding-left: 25px;
         padding-bottom: 10px;
         border-left: 1px solid grey;
+        font-weight: lighter;
     }
 
     &__description {
         padding-left: 25px;
         border-left: 1px solid grey;
+
+        p {
+            padding-bottom: 0px;
+        }
     }
 }
 
 .cv-linkedin {
     margin-left: 50px;
+    margin-bottom: 75px;
 }

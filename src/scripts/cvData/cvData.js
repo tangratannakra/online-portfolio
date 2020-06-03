@@ -4,20 +4,16 @@ const cvData = [{
         description: 'Developing and maintaining websites using WordPress / WooCommerce as CMS. Developing WordPress themes using HTML / CSS / JavaScript. Wordpress customization. Creative work for ads. Logo and Brand identity design. Constant self-development through learnig and personal open sourse project with JavaScript and React;'
     },
     {
-        title: 'Website Administration',
-        date: 'Oct 2012 – Sep 2015',
-        description: 'Administrating company webpage site. Creating website content, catalog content.'
-    },
-    {
         title: 'Web and Graphic designer / Front-End Developer',
         date: '03 / 2011 – 06 / 2012 @ Web Fashion Ltd',
         description: 'UX/UI. Creating products and web page designs with Adobe PS/ Adobe Illustrator. Front-End development with HTML/CSS/jQuery'
-    },
-    {
-        title: 'Software Engineer & Program Manager',
-        date: '2010 - 2011 @ ASIC Depot',
-        description: 'writing Perl scripts for JIRA. Designing the work flow of the scripts and their functionality. Testing the scripts. Managing project documentation. Making project plans. Project tracking.'
     }
 ];
 
 export default cvData;
+
+// {
+//     title: 'Software Engineer & Program Manager',
+//     date: '2010 - 2011 @ ASIC Depot',
+//     description: 'writing Perl scripts for JIRA. Designing the work flow of the scripts and their functionality. Testing the scripts. Managing project documentation. Making project plans. Project tracking.'
+// }

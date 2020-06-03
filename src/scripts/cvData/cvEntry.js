@@ -11,7 +11,7 @@ class cvEntry {
     <div class="cv-entry__title">
       <h1>${data.title}</h1>
     </div>
-    <div class="cv-entry__date">${data.date}</div>
+    
     <div class="cv-entry__description">
       <p>${data.description}</p>
     </div>
