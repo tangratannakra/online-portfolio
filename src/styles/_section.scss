@@ -1,4 +1,6 @@
 #bio {
+    background-color: #fdfdfd;
+
     &:hover {
         //background-color: grey;
         //background-color: #CDDCDC;
@@ -6,14 +8,20 @@
 
         // background-color: #85FFBD;
         // background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
-        // background-blend-mode: screen, overlay;
-        // transition: background-color 0.5s ease-in-out;
+        background-color: #e6e6e6;
+
+        background-image: linear-gradient(to right top, #ffffff, #f9f9f9, #f2f2f2, #ececec, #e6e6e6);
+
+        background-blend-mode: screen, overlay;
+        transition: background-color 0.5s ease-in-out;
+
+
     }
 }
 
 .section {
     width: 100%;
-    padding: 50px 25px;
+    padding: 50px 25px 75px 25px;
     // min-height: 100vh;
     background-color: #fdfdfd;
     background-image: none;
@@ -34,7 +42,8 @@
     }
 
     &__left {
-        margin-bottom: 25px;
+        margin-bottom: 50px;
+        padding-top: 25px;
 
         @include minSmall {
             margin-bottom: 0px;
@@ -48,7 +57,7 @@
             }
         }
 
-        padding-top: 25px;
+
 
         @include minSmall {
             padding-top: 0px;
@@ -66,7 +75,7 @@
         padding-top: 25px;
 
         &>div {
-            margin-bottom: 50px;
+            margin-bottom: 75px;
 
             &:last-child {
                 margin-bottom: 0px;

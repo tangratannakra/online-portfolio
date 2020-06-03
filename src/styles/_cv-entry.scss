@@ -46,6 +46,12 @@
 }
 
 .cv-linkedin {
+    img {
+        margin-right: 15px;
+    }
+
+    display: flex;
+    align-items: center;
     margin-left: 50px;
-    margin-bottom: 75px;
+    padding-bottom: 25px;
 }
