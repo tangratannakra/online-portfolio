@@ -1,11 +1,11 @@
 .testimonial {
     blockquote {
         line-height: 1.8rem;
-        padding: 0px 25px;
+        // padding: 0px 25px;
         z-index: 10;
 
         @include minLarge {
-            margin-left: 25px;
+            // margin-left: 25px;
         }
     }
 

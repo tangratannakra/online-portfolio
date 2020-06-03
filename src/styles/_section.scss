@@ -4,13 +4,10 @@
         //background-color: #CDDCDC;
         // background: radial-gradient(circle at center, rgba(255, 255, 255, 1) 0%, rgba(234, 234, 234, 1) 100%);
 
-        background-color: #85FFBD;
-        background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
-
-
-
-        background-blend-mode: screen, overlay;
-        transition: background-color 0.5s ease-in-out;
+        // background-color: #85FFBD;
+        // background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
+        // background-blend-mode: screen, overlay;
+        // transition: background-color 0.5s ease-in-out;
     }
 }
 
@@ -22,10 +19,9 @@
     background-image: none;
 
 
-
     &--big {
         @include minLarge {
-            padding: 50px 10%;
+            padding: 50px 8%;
         }
     }
 
@@ -34,7 +30,6 @@
     }
 
     @include minSmall {
-        //background-color: red;
         color: black;
     }
 
@@ -55,31 +50,37 @@
 
         padding-top: 25px;
 
-        // min-height: 100vh; 
         @include minSmall {
             padding-top: 0px;
-            //border-right: 1px solid black;
             width: 50%;
-            padding-right: 25px;
+            padding-right: 30px;
+        }
+
+        @include minLarge {
+            padding-right: 50px;
+            border-right: 1px dotted $mainGrey;
         }
     }
 
     &__right {
+        padding-top: 25px;
+
         &>div {
-            margin-bottom: 25px;
+            margin-bottom: 50px;
 
             &:last-child {
                 margin-bottom: 0px;
             }
         }
 
-        padding-top: 25px;
-
-        // min-height: 100vh;
         @include minSmall {
             padding-top: 0px;
-            padding-left: 25px;
+            padding-left: 30px;
             width: 50%;
+        }
+
+        @include minLarge {
+            padding-left: 50px;
         }
     }
 }

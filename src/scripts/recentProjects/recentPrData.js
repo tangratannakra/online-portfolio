@@ -1,4 +1,10 @@
 const recentPrData = [{
+        thumb: '../src/img/prjcts/rodina.png',
+        title: 'Rodina-Haskovo LTD',
+        description: 'Custom Template / Wordpress / Site Admin',
+        url: 'http://rodinahaskovo.com/'
+    },
+    {
         thumb: '../src/img/prjcts/interlabor.png',
         title: 'Interlabor',
         description: 'Custom CSS / Custom JavaScript / Site Admin',
@@ -26,7 +32,7 @@ const recentPrData = [{
         thumb: '../src/img/prjcts/realestate.png',
         title: 'RealEstate Agency',
         description: 'CSS / JS / Single Page',
-        url: '#'
+        url: 'https://tangratannakra.github.io/Real-Estate-Agency-Front-Page/'
     }
 ];
 
