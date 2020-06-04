@@ -1,9 +1,14 @@
 /* main vars */
 
 /* font-family: 'Montserrat', sans-serif;*/
-$mainBlue: rgb(41, 41, 41);
+$mainBlue: #173F5F;
+$lightBlue: #20639B;
+$green: #3CAEA3;
 $lightGrey: #E6E6E6;
 $mainGrey: #C7C9CF;
+$orange: #ED553B;
+$yellow: #F6D55C;
+
 
 /*---- Imports of Modules ----*/
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,600;0,700;1,400&display=swap');
@@ -19,4 +24,5 @@ $mainGrey: #C7C9CF;
 @import '_recent-projects';
 @import '_about-me';
 @import '_certificates';
-@import '_testimonial.scss'
+@import '_testimonial';
+@import '_footer'

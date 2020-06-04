@@ -18,6 +18,15 @@ p {
     padding-bottom: 25px;
 }
 
+a {
+    color: $mainBlue;
+    fill: currentColor;
+
+    &:hover {
+        color: $lightBlue;
+    }
+}
+
 h1 {
     font-weight: 300;
     font-size: 2.5rem;
@@ -94,4 +103,9 @@ hr {
     @include minSmall {
         flex-direction: row;
     }
+}
+
+svg {
+    height: 24px;
+    width: 24px;
 }
