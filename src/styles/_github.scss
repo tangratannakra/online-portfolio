@@ -1,5 +1,20 @@
 .github {
     margin-bottom: 25px;
+    display: flex;
+    align-items: flex-start;
+
+    &__thumb {
+        margin-right: 25px;
+    }
+
+    svg {
+        width: 32px;
+        height: 32px;
+    }
+
+    p {
+        padding-bottom: 0px;
+    }
 
     &:last-child {
         margin-bottom: 0px;
@@ -7,14 +22,16 @@
 
     &__title {
         h1 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
+            font-weight: bold;
+            line-height: 1.8rem;
             margin-bottom: 5px;
+        }
+
+        a {
+            text-decoration: none;
         }
     }
 
-    &__thumb {
-        img {
-            max-width: 100%;
-        }
-    }
+
 }

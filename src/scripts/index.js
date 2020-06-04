@@ -4,11 +4,18 @@ import '../styles/index.scss';
 import cvList from './cvData/cvList';
 import gitHubProjects from './gitHubPr/githubProjects';
 import CertificatesList from './certificates/certificatesList';
-import RevealOnScroll from './revealOnScroll';
-import AnimateDomElement from './animations';
+
+
+import {
+    gsap,
+    ScrollTrigger,
+    Draggable,
+    MotionPathPlugin
+} from "gsap/all";
 
 import RecentProjects from './recentProjects/recentProjects';
 
+gsap.registerPlugin(ScrollTrigger);
 
 
 const cv = new cvList();
@@ -16,4 +23,11 @@ const gitHubPrjs = new gitHubProjects();
 const recentPr = new RecentProjects;
 const certificatesList = new CertificatesList();
 
-const animateHeadingBlockSubtitle = new AnimateDomElement('reveal', 'reveal--is-visible');
+gsap.to("#cv-container", {
+    scrollTrigger: {
+        trigger: "#bio",
+        start: "top top", // when the top of the trigger hits the top of the viewport
+    },
+    opacity: 1,
+    duration: 2
+});
