@@ -95,21 +95,4 @@
             padding-bottom: 10px;
         }
     }
-
-    &__icon-container {
-        display: flex;
-        margin-bottom: 25px;
-    }
-
-    &__icon {
-        margin: 10px;
-
-        &:first-child {
-            margin: 10px 10px 10px 0px;
-        }
-
-        // img {
-        //     filter: grayscale(0.5);
-        // }
-    }
 }

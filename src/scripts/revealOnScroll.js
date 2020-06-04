@@ -10,7 +10,6 @@ class RevealOnScroll {
     constructor(what, when) {
         this.hideInitialy(what);
         this.reveal(what, when);
-
     }
 
     hideInitialy(what) {
