@@ -1,52 +1,32 @@
-import throttle from 'lodash/throttle';
-import debounce from 'lodash/debounce';
+import {
+    gsap,
+    ScrollTrigger,
+} from "gsap/all";
+
+gsap.registerPlugin(ScrollTrigger);
+
 
 class RevealOnScroll {
-    constructor(element, thresholdPercent) {
-        this.thresholdPercent = thresholdPercent;
-        this.itemsToReveal = element;
-        this.browserHeight = window.innerHeight;
-        this.hideInitially();
-        this.scrollThrottle = throttle(this.calcCaller, 200).bind(this);
-        this.events();
+    constructor(what, when) {
+        this.hideInitialy(what);
+        this.reveal(what, when);
+
     }
 
-    events() {
-        window.addEventListener("scroll", this.scrollThrottle);
-        window.addEventListener("resize", debounce(() => {
-            this.browserHeight = window.innerHeight;
-        }, 333));
+    hideInitialy(what) {
+        const element = document.querySelector(what);
+        element.style.opacity = "0";
     }
 
-    calcCaller() {
-        this.itemsToReveal.forEach(el => {
-            console.log('blah');
-            if (el.isRevealed == false) {
-                this.calculateIfScrolledTo(el);
-            }
+    reveal(what, when) {
+        gsap.to(`${what}`, {
+            scrollTrigger: {
+                trigger: `${when}`,
+                start: "top top", // when the top of the trigger hits the top of the viewport
+            },
+            opacity: 1,
+            duration: 2
         });
-    }
-
-    calculateIfScrolledTo(el) {
-        if (window.scrollY + this.browserHeight > el.offsetTop) {
-
-            let scrollPercent = (el.getBoundingClientRect().top / this.browserHeight) * 100;
-            if (scrollPercent < this.thresholdPercent) {
-                el.classList.add("reveal-item--is-visible");
-                el.isRevealed = true;
-                if (el.isLastItem) {
-                    window.removeEventListener("scroll", this.scrollThrottle);
-                }
-            }
-        }
-    }
-
-    hideInitially() {
-        this.itemsToReveal.forEach(el => {
-            el.classList.add("reveal-item");
-            el.isRevealed = false;
-        });
-        this.itemsToReveal[this.itemsToReveal.length - 1].isLastItem = true;
     }
 
 
