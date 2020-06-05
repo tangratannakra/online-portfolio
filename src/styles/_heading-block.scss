@@ -1,33 +1,44 @@
-.heading-block {
-    position: relative;
-    text-align: right;
-    width:100%;
-    min-height:90vh;
-   
-    @include minSmall {
-        text-align: right;
-        float: right;
-        padding-right: 15%;
-    }
+.heading-nav {
+    display: flex;
+    justify-content: space-between;
+
+    &__menu {}
 
     &__subtitle {
         font-size: 1rem;
     }
+}
+
+.heading-block {
+    position: relative;
+    text-align: right;
+    width: 100%;
+    min-height: 90vh;
+
+    @include minSmall {
+        text-align: right;
+    }
+
+    @include minMedium {
+        display: flex;
+        justify-content: space-between;
+    }
+
 
     &__username {
-        padding-top:30vh;
+        padding-top: 30vh;
         font-size: 1.5rem;
 
-        @include minSmall{
+        @include minSmall {
             padding-top: 40vh;
         }
     }
-    
+
     &__title {
         font-size: 2.3rem;
         margin: 0px;
-        
-        
+
+
         @include minSmall {
             margin: 15px 0px 10px 0px;
             font-size: 3.8rem;
@@ -36,26 +47,23 @@
 
     &__slogan {
         font-size: 1.3rem;
-        margin-top:25px;
-        @include minSmall{
+        margin-top: 25px;
+
+        @include minSmall {
             position: absolute;
             bottom: 0px;
-            right:15%;
+            right: 15%;
         }
     }
-    
+
     &__keywords {
         margin: 50px 0px 0px;
 
         @include minSmall {
             margin: unset;
-           transform: rotate(-90deg);
-           position: absolute;
-           left: 0px;
+            transform: rotate(-90deg);
+            position: absolute;
+            left: 0px;
         }
     }
-
-    
 }
-
-

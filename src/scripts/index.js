@@ -8,7 +8,7 @@ import RecentProjects from './recentProjects/recentProjects';
 import RevealOnScroll from './revealOnScroll';
 
 const cv = new cvList();
-const gitHubPrjs = new gitHubProjects();
+// const gitHubPrjs = new gitHubProjects();
 const recentPr = new RecentProjects;
 const certificatesList = new CertificatesList();
 const revealCv = new RevealOnScroll("#cv-container", "#bio");

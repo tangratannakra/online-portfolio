@@ -1,0 +1,46 @@
+.package {
+    display: none;
+
+    @include minMedium {
+        display: block;
+        font-size: 0.8rem;
+        padding: 25px;
+
+        tr {
+            display: flex;
+        }
+
+        tr.package__sign {
+            &:after {
+                color: red;
+                content: ',';
+            }
+        }
+
+        td {
+            padding: 5px 5px;
+        }
+
+    }
+
+}
+
+td.package__key {
+    padding-left: 25px;
+    color: $mainBlue;
+    font-weight: bold;
+}
+
+td.package__value {
+    color: $darkGreen;
+}
+
+
+td.package__key,
+td.package__value {
+
+    &:before,
+    &:after {
+        content: '"';
+    }
+}
