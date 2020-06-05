@@ -6,6 +6,7 @@ import gitHubProjects from './gitHubPr/githubProjects';
 import CertificatesList from './certificates/certificatesList';
 import RecentProjects from './recentProjects/recentProjects';
 import RevealOnScroll from './revealOnScroll';
+import animation from './redShift';
 
 const cv = new cvList();
 // const gitHubPrjs = new gitHubProjects();

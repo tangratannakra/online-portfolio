@@ -1,30 +1,60 @@
-//hide - reveal animation
+.animation-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
 
+    -webkit-backface-visibility: hidden;
+    /* add to fix webkit bug jitter */
+    -webkit-transform: perspective(1000px);
+    /* add to fix webkit bug jitter */
+    background-color: rgba(0, 0, 0, 0.3);
+}
 
-.reveal {
-    opacity: 0;
+#animation-text-top,
+#animation-text-bottom {
+    position: relative;
+    display: flex;
+}
 
+#animation-text-bottom {
+    top: -100px;
+    left: 180px;
+    opacity: 0.3;
+}
 
-    &--is-visible {
-        opacity: 1;
-        transition: opacity 1.5s ease-out;
-    }
+.animation-text--dev,
+.animation-text--white {
+    font-family: sans-serif;
+    font-weight: bold;
+
+    letter-spacing: -0.5rem;
+    font-smoothing: antialiased;
+    will-change: transform;
+    will-change: scale;
+}
+
+.animation-text--white {
+    font-size: 8rem;
+    color: #FFFFFF;
+    //text-shadow: -0.03em 0 0 white, 0.03em 0 0 white;
+}
+
+.animation-text--dev {
+    font-size: 9rem;
+    text-shadow: -0.03em 0 0 black, 0.03em 0 0 black;
 }
 
 
 
-// #above-fold {
-//     .heading-block__subtitle {
-//         //margin-right: 30%;
-//         opacity: 0;
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
 
-
-//     }
-
-//     .transitionX {
-//         //margin-right: 0px;
-//         opacity: 1;
-//         transition: opacity 1.5s ease-out;
-//     }
-
-// }
+    100% {
+        opacity: 1;
+    }
+}
