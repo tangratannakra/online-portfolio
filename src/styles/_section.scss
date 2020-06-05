@@ -1,6 +1,7 @@
 #above-fold {
     background: url('../img/background.jpg');
     background-size: cover;
+    height: 100vh;
 }
 
 
@@ -17,15 +18,8 @@
 }
 
 #bio {
-    background-color: #fdfdfd;
-
-    &:hover {
-        background-color: #e6e6e6;
-        background-image: linear-gradient(to right top, #ffffff, #f9f9f9, #f2f2f2, #ececec, #e6e6e6);
-        background-blend-mode: screen, overlay;
-        transition: background-color 0.5s ease-in-out;
-
-    }
+    background-image: url('../img/background-white.jpg');
+    background-size: cover;
 }
 
 .section {

@@ -1,5 +1,6 @@
 .package {
     display: none;
+    color: $yellow;
 
     @include minLarge {
         display: flex;
@@ -14,7 +15,7 @@
 
         tr.package__sign {
             &:after {
-                color: red;
+                color: $yellow;
                 content: ',';
             }
         }
@@ -29,7 +30,7 @@
 
 td.package__key {
     padding-left: 25px;
-    color: $mainBlue;
+    color: $lightBlue;
     font-weight: bold;
 }
 

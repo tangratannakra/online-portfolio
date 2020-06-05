@@ -37,15 +37,15 @@
 
 .animation-text--white {
     font-size: 5rem;
-    letter-spacing: -1rem;
+    letter-spacing: -1.1rem;
     text-shadow: -0.02em 0 0 #F22613, 0.02em 0 0 #00FFFF;
 
     @include minMedium {
-        font-size: 9rem;
+        font-size: 8rem;
     }
 
     @include minLarge {
-        font-size: 12rem;
+        font-size: 9rem;
     }
 
     color: #FFFFFF;
