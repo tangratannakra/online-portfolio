@@ -1,8 +1,10 @@
 .package {
     display: none;
 
-    @include minMedium {
-        display: block;
+    @include minLarge {
+        display: flex;
+        height: 100%;
+        align-items: center;
         font-size: 0.8rem;
         padding: 25px;
 

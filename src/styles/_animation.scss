@@ -1,16 +1,10 @@
 .animation-wrapper {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 50vh;
-
+    float: right;
     -webkit-backface-visibility: hidden;
     /* add to fix webkit bug jitter */
     -webkit-transform: perspective(1000px);
     /* add to fix webkit bug jitter */
-    background-color: rgba(0, 0, 0, 0.3);
 }
 
 #animation-text-top,
@@ -20,9 +14,16 @@
 }
 
 #animation-text-bottom {
-    top: -100px;
-    left: 180px;
+    top: -50px;
     opacity: 0.3;
+    float: right;
+    right: 50px;
+
+    @include minMedium {
+        top: -100px;
+        opacity: 0.3;
+        right: 100px;
+    }
 }
 
 .animation-text--dev,
@@ -30,31 +31,39 @@
     font-family: sans-serif;
     font-weight: bold;
 
-    letter-spacing: -0.5rem;
-    font-smoothing: antialiased;
     will-change: transform;
     will-change: scale;
 }
 
 .animation-text--white {
-    font-size: 8rem;
+    font-size: 5rem;
+    letter-spacing: -1rem;
+    text-shadow: -0.02em 0 0 #F22613, 0.02em 0 0 #00FFFF;
+
+    @include minMedium {
+        font-size: 9rem;
+    }
+
+    @include minLarge {
+        font-size: 12rem;
+    }
+
     color: #FFFFFF;
     //text-shadow: -0.03em 0 0 white, 0.03em 0 0 white;
 }
 
 .animation-text--dev {
-    font-size: 9rem;
-    text-shadow: -0.03em 0 0 black, 0.03em 0 0 black;
-}
+    font-size: 5rem;
+    letter-spacing: -0.5rem;
 
-
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
+    @include minMedium {
+        font-size: 9rem;
     }
 
-    100% {
-        opacity: 1;
+    @include minLarge {
+        font-size: 12rem;
     }
+
+    text-shadow: -0.03em 0 0 black,
+    0.03em 0 0 black;
 }
