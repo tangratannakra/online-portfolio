@@ -15,7 +15,8 @@ function timeLineHandler() {
     const certificatesList = new CertificatesList();
     const revealCv = new RevealOnScroll("#cv-container", "#bio");
     const revealClients = new RevealOnScroll('.testimonial', '.tech-stack__ul');
-    const revealAboutMe = new RevealOnScroll('.about-me__heading', '.heading-block__subtitle');
+    const revealProjects = new RevealOnScroll('.recent-projects', '.cv');
+
     const cv = new cvList();
     // const gitHubPrjs = new gitHubProjects();
 }
