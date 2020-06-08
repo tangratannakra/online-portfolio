@@ -1,12 +1,14 @@
 //Default imports
 import '../styles/index.scss';
 
+
+import animation from './redShift';
 import cvList from './cvData/cvList';
 import gitHubProjects from './gitHubPr/githubProjects';
 import CertificatesList from './certificates/certificatesList';
 import RecentProjects from './recentProjects/recentProjects';
 import RevealOnScroll from './revealOnScroll';
-import animation from './redShift';
+
 
 document.addEventListener('DOMContentLoaded', timeLineHandler, false);
 
@@ -18,5 +20,5 @@ function timeLineHandler() {
     const revealProjects = new RevealOnScroll('.recent-projects', '.cv');
 
     const cv = new cvList();
-    // const gitHubPrjs = new gitHubProjects();
+    const gitHubPrjs = new gitHubProjects();
 }
