@@ -1,3 +1,23 @@
+#above-fold-background {
+    background-color: $mainBlue;
+    opacity: 0.8;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+}
+
+#above-fold {
+    background: url('../img/background.jpg');
+    background-size: cover;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
 .heading-nav {
     display: flex;
     justify-content: space-between;

@@ -24,7 +24,7 @@ class RevealOnScroll {
                 start: "top top", // when the top of the trigger hits the top of the viewport
             },
             opacity: 1,
-            duration: 2
+            duration: 1
         });
     }
 

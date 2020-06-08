@@ -9,104 +9,105 @@ function timeLineHandler() {
 
     tl.set("#animation-text-bottom", {
         opacity: 0.5,
-        duration: 5,
+        duration: 3,
         ease: 'back'
     });
 
 
+    tl.set('.heading-nav__subtitle', {
+            x: 100,
+            opacity: 0,
+            duration: 2
+        })
+        .to('.heading-nav__subtitle', {
+            x: -100,
+            opacity: 1
+        }, 1);
+
+
     tl.set('.animation-wrapper', {
-            scale: 0.8
+            scale: 0.9,
+            opacity: 0.6
         })
         .to('.animation-wrapper', {
             scale: 1,
-            duration: 5,
-            ease: "back.inOut"
+            duration: 2,
+            opacity: 1,
+            ease: "Circ.easeOut"
         }, 0);
-
-
-    tl.set('.animation-wrapper', {
-            opacity: 0.2
-        }, 0)
-        .to('.animation-wrapper', {
-            opacity: 1
-        }, 1);
 
 
     tl.set('#F', {
             x: -100,
             y: 50
-        }, 3.9)
+        }, 1.8)
         .set('#F', {
             x: 0,
             y: 0
-        }, 4.1);
+        }, 2.5);
 
     tl.set('#R', {
             x: 300,
             y: -150,
             scale: 2
-        }, 5.25)
+        }, 3.25)
         .set('#R', {
             x: 0,
             y: 0,
             scale: 1
-        }, 5.5);
+        }, 3.5);
 
     tl.set('#O', {
             x: -150,
             y: 75
-        }, 4.75)
+        }, 3.75)
         .set('#O', {
             x: 0,
             y: 0
-        }, 5.1)
+        }, 4.1)
         .set('#O', {
             x: 50,
             y: 150
-        }, 5.4)
+        }, 4.4)
         .set('#O', {
             x: 0,
             y: 0
-        }, 5.6);
+        }, 4.6);
 
     tl.set('.N', {
             x: 0,
             y: -15
-        }, 4.85)
+        }, 3.85)
         .set('.N', {
             x: 0,
             y: 0
-        }, 5.2)
+        }, 4.2)
         .set('.N', {
             rotate: 180
-        }, 5.4)
+        }, 4.4)
         .set('.N', {
             rotate: 90
-        }, 5.6)
+        }, 4.6)
         .set('.N', {
             rotate: 0
-        }, 5.8);
+        }, 4.8);
 
     tl.set('#E', {
             x: -300,
             y: -120
-        }, 5.5)
+        }, 4.5)
         .set('#E', {
             x: 0,
             y: 0
-        }, 5.75);
+        }, 4.75);
 
     tl.set('#D', {
             x: 50,
             y: -50
-        }, 4.75)
+        }, 3.75)
         .set('#D', {
             x: 0,
             y: 0
-        }, 5.1);
-
-    tl.set('.animation-text--white', {
-        textShadowColor: "rgb(0, 0, 0)"
-    }, 5);
+        }, 4.1);
 
 }
