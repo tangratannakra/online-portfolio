@@ -34,11 +34,11 @@ function timeLineHandler() {
     }, 3);
 
     //do this for the Keywords
-    tl.to('#DEV', {
+    tl.to('.heading-block__keywords', {
         duration: 2,
-        text: "Blah Blah",
+        text: "UX / UI Engineer",
         ease: "none"
-    }, 0);
+    }, 5);
 
 
 
