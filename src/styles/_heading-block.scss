@@ -2,7 +2,7 @@
     background-color: $mainBlue;
     opacity: 0.8;
     width: 100%;
-    height: 100%;
+    height: 98vh;
     top: 0;
     left: 0;
     bottom: 0;
@@ -13,7 +13,7 @@
 #above-fold {
     background: url('../img/background.jpg');
     background-size: cover;
-    height: 100vh;
+    height: 98vh;
     overflow: hidden;
 }
 
@@ -35,7 +35,7 @@
     position: relative;
     text-align: right;
     width: 100%;
-    min-height: 90vh;
+    height: 100%;
 
     @include minSmall {
         text-align: right;
@@ -58,7 +58,7 @@
 
     &__title {
         font-size: 2.3rem;
-        margin: 20vh 0 0 0px;
+        padding: 20vh 0 0 0px;
 
         @include minSmall {
             // margin: 15px 0px 10px 0px;
@@ -68,18 +68,18 @@
 
         @include minMedium {
             margin-right: 20vh;
-            margin-top: 20vh;
+
         }
 
         @include minLarge {
             margin-right: 20vh;
-            margin-top: 20vh;
         }
     }
 
     &__slogan {
         font-size: 1.3rem;
         margin-top: 25px;
+        width: 100%;
 
         @include minSmall {
             position: absolute;

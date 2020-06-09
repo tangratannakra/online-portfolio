@@ -15,13 +15,13 @@
 
 #animation-text-bottom {
     top: -50px;
-    opacity: 0.3;
+    opacity: 0.5;
     float: right;
     right: 50px;
 
     @include minMedium {
         top: -100px;
-        opacity: 0.3;
+        opacity: 0.5;
         right: 100px;
     }
 }
@@ -69,4 +69,33 @@
 
     text-shadow: -0.03em 0 0 black,
     0.03em 0 0 black;
+}
+
+
+
+//Heading-nav_subtitle animation *Online Portfolio*
+.heading-nav__subtitle {
+    overflow: hidden;
+    animation: headingTextOpacity 2s ease-in 4.5s;
+    animation-fill-mode: backwards;
+}
+
+
+//Engineer with passion for design
+.heading-block__slogan {
+    overflow: hidden;
+    animation: headingTextOpacity 2s ease-in-out 4.5s;
+    animation-fill-mode: backwards;
+}
+
+.package {}
+
+@keyframes headingTextOpacity {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }

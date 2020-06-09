@@ -1,30 +1,48 @@
 import gsap from 'gsap/all';
+import TextPlugin from 'gsap/TextPlugin';
+
+gsap.registerPlugin(TextPlugin);
+
+const tl = gsap.timeline();
+let played;
+
+document.addEventListener('mousemove', () => {
+    if (!played) {
+        played = true;
+        timeLineHandler();
+    }
+}, false);
+
+//hiding the initial vales from the css
+tl.set(['#animation-text-bottom', '.package'], {
+    opacity: 0
+});
 
 
-document.addEventListener('DOMContentLoaded', timeLineHandler, false);
-
-
+//on mouse move
 function timeLineHandler() {
-    const tl = gsap.timeline();
-
-    tl.set("#animation-text-bottom", {
-        opacity: 0,
-    }).to("#animation-text-bottom", {
+    tl.to("#animation-text-bottom", {
         opacity: 0.5,
         duration: 5,
         ease: 'back'
     }, 0);
 
-    tl.set('.heading-nav__subtitle', {
-        opacity: 0,
-        x: 0
-    }).to('.heading-nav__subtitle', {
+    tl.to('.package', {
         opacity: 1,
-        x: -100,
-        duration: 2
+        duration: 5,
+        ease: 'back'
+    }, 3);
+
+    //do this for the Keywords
+    tl.to('#DEV', {
+        duration: 2,
+        text: "Blah Blah",
+        ease: "none"
     }, 0);
 
 
+
+    //Letters Flickering
     tl.set('#F', {
             x: -100,
             y: 50
