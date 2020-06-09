@@ -8,33 +8,21 @@ function timeLineHandler() {
     const tl = gsap.timeline();
 
     tl.set("#animation-text-bottom", {
+        opacity: 0,
+    }).to("#animation-text-bottom", {
         opacity: 0.5,
-        duration: 3,
+        duration: 5,
         ease: 'back'
-    });
-
+    }, 0);
 
     tl.set('.heading-nav__subtitle', {
-            x: 100,
-            opacity: 0,
-            duration: 2
-        })
-        .to('.heading-nav__subtitle', {
-            x: -100,
-            opacity: 1
-        }, 1);
-
-
-    tl.set('.animation-wrapper', {
-            scale: 0.9,
-            opacity: 0.6
-        })
-        .to('.animation-wrapper', {
-            scale: 1,
-            duration: 2,
-            opacity: 1,
-            ease: "Circ.easeOut"
-        }, 0);
+        opacity: 0,
+        x: 0
+    }).to('.heading-nav__subtitle', {
+        opacity: 1,
+        x: -100,
+        duration: 2
+    }, 0);
 
 
     tl.set('#F', {
