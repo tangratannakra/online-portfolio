@@ -3,82 +3,87 @@ import TextPlugin from 'gsap/TextPlugin';
 
 gsap.registerPlugin(TextPlugin);
 
-const tl = gsap.timeline();
+window.onload = introHandler;
+let tl = gsap.timeline();
 let played;
 
-document.addEventListener('mousemove', () => {
-    if (!played) {
-        played = true;
-        timeLineHandler();
-    }
-}, false);
+function introHandler() {
+    //hiding the initial vales from the css
+    tl.set(['#my-name-intro', '#animation-text-bottom', '.package', '#animation-text-top', '#animation-text-bottom'], {
+            opacity: 0
+        }).to('#text-type-in-intro', {
+            duration: 2,
+            text: "My name is",
+            ease: "none"
+        }, 1)
+        .to('#my-name-intro', {
+            opacity: 1,
+            duration: 1,
+            ease: 'back'
+        })
+        .to(['#text-type-in-intro', '#hi'], {
+            opacity: 0,
+            duration: 1,
+            ease: "power3.out",
+        })
+        .to('#animation-text-top', {
+            opacity: 1,
+            duration: 1,
+            ease: 'back'
+        })
+        .set("#animation-text-bottom", {
+            opacity: 0.5,
+            duration: 5,
+            ease: 'back'
+        })
+        .to('.package', {
+            opacity: 1,
+            duration: 5,
+            ease: 'back'
+        }).call(timeLineHandler, null, '-=3');
 
-//hiding the initial vales from the css
-tl.set(['#animation-text-bottom', '.package'], {
-    opacity: 0
-});
+}
 
 
-//on mouse move
 function timeLineHandler() {
-    tl.to("#animation-text-bottom", {
-        opacity: 0.5,
-        duration: 5,
-        ease: 'back'
-    }, 0);
+    let tl = gsap.timeline();
 
-    tl.to('.package', {
-        opacity: 1,
-        duration: 5,
-        ease: 'back'
-    }, 3);
-
-    //do this for the Keywords
-    tl.to('.heading-block__keywords', {
-        duration: 2,
-        text: "UX / UI Engineer",
-        ease: "none"
-    }, 5);
-
-
-
-    //Letters Flickering
     tl.set('#F', {
             x: -100,
             y: 50
-        }, 1.8)
+        }, 0)
         .set('#F', {
             x: 0,
             y: 0
-        }, 2.5);
+        }, 0.5);
 
     tl.set('#R', {
             x: 300,
             y: -150,
             scale: 2
-        }, 3.25)
+        }, 1)
         .set('#R', {
             x: 0,
             y: 0,
             scale: 1
-        }, 3.5);
+        }, 1.5);
 
     tl.set('#O', {
             x: -150,
             y: 75
-        }, 3.75)
+        }, 1.75)
         .set('#O', {
             x: 0,
             y: 0
-        }, 4.1)
+        }, 2.1)
         .set('#O', {
             x: 50,
             y: 150
-        }, 4.4)
+        }, 2.4)
         .set('#O', {
             x: 0,
             y: 0
-        }, 4.6);
+        }, 2.6);
 
     tl.set('.N', {
             x: 0,
@@ -115,5 +120,4 @@ function timeLineHandler() {
             x: 0,
             y: 0
         }, 4.1);
-
 }
