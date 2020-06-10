@@ -1,7 +1,9 @@
 import gsap from 'gsap/all';
 import TextPlugin from 'gsap/TextPlugin';
+import ScrollTo from 'gsap/ScrollToPlugin';
 
 gsap.registerPlugin(TextPlugin);
+gsap.registerPlugin(ScrollTo);
 
 window.onload = introHandler;
 let tl = gsap.timeline();
@@ -121,3 +123,12 @@ function timeLineHandler() {
             y: 0
         }, 4.1);
 }
+
+const scrollBtn = document.getElementById('scroller');
+
+scrollBtn.addEventListener('click', () => {
+    gsap.to(window, {
+        duration: 0.5,
+        scrollTo: "#bio"
+    });
+});
