@@ -10,10 +10,19 @@
     display: flex;
     flex-direction: column;
     position: relative;
+    margin-bottom: 10vh;
+
+    &__reveal-mask {
+        opacity: 0.2;
+        width: 100%;
+        height: 100%;
+        background-color: pink;
+    }
 
 
     @include minSmall {
-        width: 33.33%;
+        width: 50%;
+
 
         // &:nth-child(odd) {
         //     padding-right: 10px;
@@ -30,9 +39,9 @@
     }
 
     &__thumb {
-        background-color: grey;
+
         width: 100%;
-        height: 300px;
+        height: 320px;
         overflow: hidden;
 
         img {
@@ -40,47 +49,47 @@
         }
     }
 
-    &__hover {
-        display: hidden;
-        opacity: 0;
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        padding: 25px;
+    // &__hover {
+    //     display: hidden;
+    //     opacity: 0;
+    //     position: absolute;
+    //     height: 100%;
+    //     width: 100%;
+    //     padding: 25px;
 
-        h1 {
-            font-size: 1.3rem;
-            font-weight: bold;
-        }
+    //     h1 {
+    //         font-size: 1.3rem;
+    //         font-weight: bold;
+    //     }
 
-        a {
-            text-decoration: none;
-            position: relative;
+    //     a {
+    //         text-decoration: none;
+    //         position: relative;
 
-            &:hover {
-                &:after {
-                    content: url('/src/img/icons/launch-24px.svg');
-                    position: absolute;
-                    right: -30px;
-                }
-            }
-        }
+    //         &:hover {
+    //             &:after {
+    //                 content: url('/src/img/icons/launch-24px.svg');
+    //                 position: absolute;
+    //                 right: -30px;
+    //             }
+    //         }
+    //     }
 
-        p {
-            padding-bottom: 0px;
-        }
+    //     p {
+    //         padding-bottom: 0px;
+    //     }
 
-        &:hover {
+    //     &:hover {
 
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            opacity: 1;
-            background-color: rgba(255, 255, 255, 0.9);
-            transition: opacity 0.2s ease-in;
-        }
-    }
+    //         display: flex;
+    //         flex-direction: column;
+    //         align-items: center;
+    //         justify-content: center;
+    //         opacity: 1;
+    //         background-color: rgba(255, 255, 255, 0.9);
+    //         transition: opacity 0.2s ease-in;
+    //     }
+    // }
 
     &__description {
         text-align: center;

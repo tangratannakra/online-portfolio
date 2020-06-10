@@ -8,7 +8,6 @@ import CertificatesList from './certificates/certificatesList';
 import RecentProjects from './recentProjects/recentProjects';
 import RevealOnScroll from './revealOnScroll';
 
-
 document.addEventListener('DOMContentLoaded', timeLineHandler, false);
 
 function timeLineHandler() {

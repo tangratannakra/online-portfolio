@@ -1,6 +1,7 @@
 import RecentProject from './recentProject';
 import recentPrData from './recentPrData';
 
+
 const recentPrContainer = document.getElementById('recentPr-container');
 
 class RecentProjects {
@@ -9,11 +10,13 @@ class RecentProjects {
     }
 
     buildPrList(data) {
-        data.forEach(entry => {
+        data.forEach((entry, index) => {
+            const recentPr = new RecentProject(entry, index);
+            recentPrContainer.appendChild(recentPr);
 
-            recentPrContainer.appendChild(new RecentProject(entry));
         });
     }
 }
+
 
 export default RecentProjects;
