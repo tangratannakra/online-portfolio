@@ -33,16 +33,16 @@ function introHandler() {
             duration: 1,
             ease: 'back'
         })
-        .set("#animation-text-bottom", {
+        .to("#animation-text-bottom", {
             opacity: 0.5,
             duration: 5,
             ease: 'back'
-        })
+        }).call(timeLineHandler, null, '-=5')
         .to('.package', {
             opacity: 1,
             duration: 5,
             ease: 'back'
-        }).call(timeLineHandler, null, '-=3');
+        }, '-=5');
 
 }
 
@@ -57,71 +57,71 @@ function timeLineHandler() {
         .set('#F', {
             x: 0,
             y: 0
-        }, 0.5);
+        }, 0.3);
 
     tl.set('#R', {
             x: 300,
             y: -150,
             scale: 2
-        }, 1)
+        }, 0.5)
         .set('#R', {
             x: 0,
             y: 0,
             scale: 1
-        }, 1.5);
+        }, 1);
 
     tl.set('#O', {
             x: -150,
             y: 75
-        }, 1.75)
+        }, 1.3)
         .set('#O', {
             x: 0,
             y: 0
-        }, 2.1)
+        }, 1.75)
         .set('#O', {
             x: 50,
             y: 150
-        }, 2.4)
+        }, 2)
         .set('#O', {
             x: 0,
             y: 0
-        }, 2.6);
+        }, 2.4);
 
     tl.set('.N', {
             x: 0,
             y: -15
-        }, 3.85)
+        }, 2.5)
         .set('.N', {
             x: 0,
             y: 0
-        }, 4.2)
+        }, 2.8)
         .set('.N', {
             rotate: 180
-        }, 4.4)
+        }, 3.2)
         .set('.N', {
             rotate: 90
-        }, 4.6)
+        }, 3.6)
         .set('.N', {
             rotate: 0
-        }, 4.8);
+        }, 3.8);
 
     tl.set('#E', {
             x: -300,
             y: -120
-        }, 4.5)
+        }, 2)
         .set('#E', {
             x: 0,
             y: 0
-        }, 4.75);
+        }, 2.75);
 
     tl.set('#D', {
             x: 50,
             y: -50
-        }, 3.75)
+        }, 2.75)
         .set('#D', {
             x: 0,
             y: 0
-        }, 4.1);
+        }, 3.1);
 }
 
 const scrollBtn = document.getElementById('scroller');

@@ -92,11 +92,10 @@
         margin: 50px 0px 0px;
 
         @include minSmall {
-            margin: unset;
             transform: rotate(-90deg);
+            transform-origin: left;
             position: absolute;
-            left: -50px;
-            bottom: 50px;
+            bottom: 0;
         }
     }
 
