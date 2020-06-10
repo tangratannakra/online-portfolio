@@ -26,6 +26,22 @@
     }
 }
 
+.animation-intro__text {
+    color: white;
+
+    h1 {
+        margin-bottom: -10px
+    }
+
+    span {
+        margin-right: 25px;
+
+        &:last-child {
+            margin-right: 0px;
+        }
+    }
+}
+
 .animation-text--dev,
 .animation-text--white {
     font-family: sans-serif;

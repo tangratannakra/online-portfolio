@@ -14,20 +14,24 @@ function introHandler() {
     tl.set(['#my-name-intro', '#animation-text-bottom', '.package', '#animation-text-top', '#animation-text-bottom'], {
             opacity: 0
         }).to('#text-type-in-intro', {
-            duration: 2,
+            duration: 1,
             text: "My name is",
             ease: "none"
         }, 1)
         .to('#my-name-intro', {
             opacity: 1,
-            duration: 1,
+            duration: 0.8,
+            ease: 'back'
+        }).to('#my-name-intro', {
+            opacity: 0.8,
+            duration: 0.2,
             ease: 'back'
         })
         .to(['#text-type-in-intro', '#hi'], {
             opacity: 0,
             duration: 1,
             ease: "power3.out",
-        })
+        }, '-=1')
         .to('#animation-text-top', {
             opacity: 1,
             duration: 1,
