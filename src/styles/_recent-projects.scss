@@ -25,30 +25,35 @@
 
 
     @include minSmall {
+        width: 80%;
+    }
+
+    @include minLarge {
         width: 50%;
-
-
-        // &:nth-child(odd) {
-        //     padding-right: 10px;
-        // }
-
-        // &:nth-child(even) {
-        //     padding-left: 10px;
-        // }
     }
 
     &__title {
         display: block;
         text-align: center;
+
+        h1 {
+            font-size: 1.3rem;
+            font-weight: 400;
+
+            @include minSmall {
+                font-size: 1.8rem;
+            }
+
+            @include minSmall {
+                // width: 50%;
+            }
+        }
     }
 
     &__thumb {
-
         width: 100%;
         height: 320px;
         overflow: hidden;
-
-
     }
 
     &__hover {
@@ -67,13 +72,14 @@
             width: 150%;
         }
 
-        transition: opacity 0.1s ease;
+        transition: opacity 0.5s ease;
 
         &:hover {
             box-shadow: 0 10px 50px 0 rgba(0, 0, 0, .3);
             opacity: 1;
             transition: all 0.3s ease;
             cursor: pointer;
+
         }
 
         &:before {
@@ -96,26 +102,27 @@
             transition: all 0.3s ease;
         }
 
-
-        h1 {
-            font-size: 1.3rem;
-            font-weight: bold;
-        }
-
         a {
+            display: inline-block;
             text-decoration: none;
             position: relative;
+            padding: 25px 25px 25px 25px;
+            background-color: $mainBlue;
+            color: white;
+            margin-right: -25px;
 
             &:hover {
-                margin-right: 25px;
-                font-size: larger;
-                text-decoration: underline;
-                transition: all 0.2s ease;
+                // margin-right: 25px;
+                transition: all 0.5s ease;
+                background-color: $lightBlue;
 
                 &:after {
+                    filter: invert(1);
                     content: url('/src/img/icons/launch-24px.svg');
-                    position: absolute;
-                    right: -30px;
+                    position: relative;
+                    display: inline-block;
+                    margin-left: 15px;
+                    transition: all 0.5s ease;
                 }
             }
         }
@@ -127,6 +134,7 @@
 
     &__description {
         text-align: right;
+        font-weight: 700;
         z-index: 3;
     }
 
