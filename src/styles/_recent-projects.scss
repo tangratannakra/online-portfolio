@@ -19,6 +19,10 @@
         background-color: pink;
     }
 
+    img {
+        width: 100%;
+    }
+
 
     @include minSmall {
         width: 50%;
@@ -44,9 +48,7 @@
         height: 320px;
         overflow: hidden;
 
-        img {
-            width: 100%;
-        }
+
     }
 
     &__hover {
@@ -60,6 +62,10 @@
         height: 100%;
         width: 100%;
         padding: 25px;
+
+        img {
+            width: 150%;
+        }
 
         transition: opacity 0.1s ease;
 
