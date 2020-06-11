@@ -41,7 +41,7 @@ function introHandler() {
             opacity: 0.5,
             duration: 5,
             ease: 'back'
-        }).call(timeLineHandler, null, '-=5')
+        }).call(timeLineHandler, null, '-=7')
         .to('.package', {
             opacity: 1,
             duration: 5,
@@ -57,11 +57,11 @@ function timeLineHandler() {
     tl.set('#F', {
             x: -100,
             y: 50
-        }, 0)
+        }, 0.2)
         .set('#F', {
             x: 0,
             y: 0
-        }, 0.3);
+        }, 0.4);
 
     tl.set('#R', {
             x: 300,
@@ -72,42 +72,42 @@ function timeLineHandler() {
             x: 0,
             y: 0,
             scale: 1
-        }, 1);
+        }, 0.9);
 
     tl.set('#O', {
             x: -150,
             y: 75
-        }, 1.3)
+        }, 0.9)
         .set('#O', {
             x: 0,
             y: 0
-        }, 1.75)
+        }, 1.2)
         .set('#O', {
             x: 50,
             y: 150
-        }, 2)
+        }, 1.5)
         .set('#O', {
             x: 0,
             y: 0
-        }, 2.4);
+        }, 2);
 
     tl.set('.N', {
             x: 0,
             y: -15
-        }, 2.5)
+        }, 2.1)
         .set('.N', {
             x: 0,
             y: 0
-        }, 2.8)
+        }, 2.5)
         .set('.N', {
             rotate: 180
-        }, 3.2)
+        }, 2.8)
         .set('.N', {
             rotate: 90
-        }, 3.6)
+        }, 3.3)
         .set('.N', {
             rotate: 0
-        }, 3.8);
+        }, 3.5);
 
     tl.set('#E', {
             x: -300,
