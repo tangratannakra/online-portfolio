@@ -7,6 +7,14 @@
     /* add to fix webkit bug jitter */
 }
 
+#my-name-into,
+#animation-text-bottom,
+.package,
+#animation-text-top,
+#animation-text-bottom {
+    opacity: 0;
+}
+
 #hi {
     font-size: larger;
     font-weight: 800;

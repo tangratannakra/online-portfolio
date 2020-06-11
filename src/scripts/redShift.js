@@ -9,11 +9,17 @@ window.onload = introHandler;
 let tl = gsap.timeline();
 let played;
 
+tl.set(['#my-name-intro', '#animation-text-bottom', '.package', '#animation-text-top', '#animation-text-bottom'], {
+    opacity: 0
+});
+
 function introHandler() {
     //hiding the initial vales from the css
-    tl.set(['#my-name-intro', '#animation-text-bottom', '.package', '#animation-text-top', '#animation-text-bottom'], {
-            opacity: 0
-        }).to('#text-type-in-intro', {
+    tl
+        // .set(['#my-name-intro', '#animation-text-bottom', '.package', '#animation-text-top', '#animation-text-bottom'], {
+        //         opacity: 0
+        //     })
+        .to('#text-type-in-intro', {
             duration: 1,
             text: "My name is",
             ease: "none"
@@ -41,7 +47,7 @@ function introHandler() {
             opacity: 0.5,
             duration: 5,
             ease: 'back'
-        }).call(timeLineHandler, null, '-=7')
+        }).call(timeLineHandler, null, '-=3.5')
         .to('.package', {
             opacity: 1,
             duration: 5,
