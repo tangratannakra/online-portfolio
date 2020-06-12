@@ -2,6 +2,7 @@
 import '../styles/index.scss';
 
 import animation from './redShift';
+import toggler from './mainMenuToggle';
 import cvList from './cvData/cvList';
 import gitHubProjects from './gitHubPr/githubProjects';
 import CertificatesList from './certificates/certificatesList';
