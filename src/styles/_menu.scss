@@ -1,41 +1,75 @@
 .menu-hamburger {
-    position: absolute;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 5;
+
+    height: 50px;
+    width: 50px;
+
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    padding: 25px;
-    height: 75px;
-    width: 75px;
-    background-color: $darkGreen;
+    background-color: darken($darkGreen, 10);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+
+    &__toggler {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 50px;
+        width: 50px;
+        opacity: 0;
+        cursor: pointer;
+        z-index: 3;
+    }
 
     &__line {
+        position: relative;
         display: block;
-        width: 32px;
-        margin: 3px 0px;
-        border-bottom: 3px solid white;
+        width: 20px;
+        height: 2px;
         background-color: white;
+        transition: all 1s ease;
+        z-index: 2;
 
-        &:first-child {
-            margin-top: 0px;
+        &:before,
+        &:after {
+            content: ' ';
+            position: absolute;
+            width: 20px;
+            height: 2px;
+            top: -7px;
+            background-color: inherit;
         }
 
-        &:last-child {
-            margin-bottom: 0px;
-        }
-
-        &--middle {
-            &:hover {
-                width: 40px;
-            }
+        &:after {
+            top: 7px;
         }
     }
 
 }
 
-.heading-nav {
+.menu-hamburger__toggler:hover+.menu-hamburger__line {
+    top: 0;
+    left: 0;
+    width: 27px;
 
+}
+
+.menu-hamburger__toggler:checked+.menu-hamburger__line {
+    transform: rotate(135deg);
+}
+
+.menu-hamburger__toggler:checked+.menu-hamburger__line:before,
+.menu-hamburger__toggler:checked+.menu-hamburger__line:after {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+
+.heading-nav {
     &__menu {
         display: none;
     }
