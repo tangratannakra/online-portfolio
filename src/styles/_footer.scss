@@ -8,3 +8,15 @@ footer {
     display: flex;
     justify-content: space-between;
 }
+
+.footer__title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    p {
+        display: block;
+        font-size: 0.8rem;
+        letter-spacing: 0.1rem;
+    }
+}
