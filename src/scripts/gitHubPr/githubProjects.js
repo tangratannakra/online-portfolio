@@ -7,7 +7,7 @@ const gitContainer = document.getElementById('github-projects');
 //Fetching data from Github
 const axios = require('axios');
 const githubUrl = 'https://api.github.com/graphql';
-const token = '9bab1c3f56c0c8dbfc69c088c6894cb004f18e11';
+const token = 'e98e86086631ba898ed5ee5ea7cd0d3ee8fde5f0';
 const oauth = {
   Authorization: 'bearer ' + token
 };
