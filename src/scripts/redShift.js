@@ -14,12 +14,8 @@ tl.set(['#my-name-intro', '#animation-text-bottom', '.package', '#animation-text
 });
 
 function introHandler() {
-    //hiding the initial vales from the css
-    tl
-        // .set(['#my-name-intro', '#animation-text-bottom', '.package', '#animation-text-top', '#animation-text-bottom'], {
-        //         opacity: 0
-        //     })
-        .to('#text-type-in-intro', {
+
+    tl.to('#text-type-in-intro', {
             duration: 1,
             text: "My name is",
             ease: "none"
@@ -80,58 +76,51 @@ function timeLineHandler() {
             scale: 1
         }, 0.9);
 
-    tl.set('#O', {
-            x: -150,
-            y: 75
-        }, 0.9)
-        .set('#O', {
-            x: 0,
-            y: 0
-        }, 1.2)
-        .set('#O', {
-            x: 50,
-            y: 150
-        }, 1.5)
-        .set('#O', {
-            x: 0,
-            y: 0
-        }, 2);
+    // tl.set('#O', {
+    //         x: -150,
+    //         y: 75
+    //     }, 0.9)
+    //     .set('#O', {
+    //         x: 0,
+    //         y: 0
+    //     }, 1.2);
+
 
     tl.set('.N', {
             x: 0,
             y: -15
-        }, 2.1)
+        }, 1.1)
         .set('.N', {
             x: 0,
             y: 0
-        }, 2.5)
+        }, 1.5)
         .set('.N', {
             rotate: 180
-        }, 2.8)
+        }, 1.8)
         .set('.N', {
             rotate: 90
-        }, 3.3)
+        }, 2.3)
         .set('.N', {
             rotate: 0
-        }, 3.5);
+        }, 2.5);
 
-    tl.set('#E', {
-            x: -300,
-            y: -120
-        }, 2)
-        .set('#E', {
-            x: 0,
-            y: 0
-        }, 2.75);
+    // tl.set('#E', {
+    //         x: -300,
+    //         y: -120
+    //     }, 2)
+    //     .set('#E', {
+    //         x: 0,
+    //         y: 0
+    //     }, 2.75);
 
-    tl.set('#D', {
-            x: 50,
-            y: -50
-        }, 2.75)
-        .set('#D', {
-            x: 0,
-            y: 0
-        }, 3.1);
+    // tl.set('#D', {
+    //         x: 50,
+    //         y: -50
+    //     }, 2.75)
+    //     .set('#D', {
+    //         x: 0,
+    //         y: 0
+    //     }, 3.1);
 }
 
 const scrollBtn = document.getElementById('scroller');
