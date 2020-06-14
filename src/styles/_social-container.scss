@@ -1,17 +1,67 @@
-.social {
-    &__icon-container {
+.social-icon {
+    &__container {
         display: flex;
+
+        &--vertical {
+            flex-direction: column;
+        }
     }
 
-    &__icon {
+    &__item {
         margin: 10px;
+        width: 24px;
 
         &:first-child {
             margin: 10px 10px 10px 0px;
         }
 
-        // img {
-        //     filter: grayscale(0.5);
-        // }
+        overflow: hidden;
+
+        // background-color: black;
+        position: relative;
+        display: hidden;
+
+
     }
 }
+
+// ul {
+//     padding-left: 20px;
+//     margin: 25px 0px;
+// }
+
+// li {
+//     padding-bottom: 10px;
+// }
+
+// h2 {
+//     font-size: 1.3rem;
+//     margin-top: 25px;
+//     margin-bottom: 10px;
+//     position: relative;
+//     display: inline-block;
+
+//     &:after {
+//         content: ' ';
+//         width: 10px;
+//         border-bottom: 3px solid black;
+//         position: absolute;
+//         bottom: -5px;
+//         left: 0px;
+//     }
+
+// .about-me__section,
+// .about-me__social,
+// .about-me__heading {
+//     padding-bottom: 25px;
+
+//     &:hover {
+//         h2 {
+//             &:after {
+//                 content: ' ';
+//                 width: 100%;
+//                 transition: width 0.3s ease-out;
+//             }
+//         }
+//     }
+// }
