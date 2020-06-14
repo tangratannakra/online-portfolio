@@ -14,6 +14,10 @@
     background-color: darken($darkGreen, 10);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 
+    @include minSmall {
+        display: none;
+    }
+
     &__toggler {
         position: absolute;
         top: 0;
@@ -70,46 +74,86 @@
     position: fixed;
     top: 0px;
     left: -100%;
-
-    height: 70px;
     width: 100%;
+    height: 100%;
+
+    @include minSmall {
+        position: relative;
+        visibility: visible;
+        opacity: 1;
+        left: 0;
+        height: 70px;
+        background-color: rgba(darken($mainBlue, 5), 0.5);
+    }
+
+
     opacity: 0;
     visibility: hidden;
-
     display: flex;
     justify-content: center;
     z-index: 3;
-    background-color: rgba($darkGreen, 0.8);
+    background-color: rgba($darkGreen, 1);
     transition: all 0.2s ease;
 
-    ul {
-        list-style: none;
-        margin-left: 70px;
+    ol {
+        list-style: decimal-leading-zero !important;
+
         height: 100%;
         display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @include minSmall {
+            flex-direction: row;
+            margin-left: 70px;
+        }
     }
 
     li {
-        display: flex;
-        align-items: center;
+        display: block;
         color: white;
-        margin-right: 50px;
+        list-style-position: inside;
+        margin-bottom: 25px;
 
-        a {
-            display: block;
-            color: inherit;
-            text-decoration: none;
+        @include minSmall {
+            display: flex;
+            align-items: center;
+            margin-right: 50px;
+            margin-bottom: 0px;
 
-            &:hover {
-
-                border-bottom: solid 2px white;
-                padding-bottom: 10px;
-                transition: all 0.2s ease;
+            li:last-child {
+                margin-right: 0px
             }
         }
 
-        li:last-child {
-            margin-right: 0px
+        a {
+            display: list-item;
+            color: inherit;
+            text-decoration: none;
+            padding: 20px;
+
+            &:hover {
+                outline-offset: 10px;
+                outline: 2px solid white;
+                background-color: darken($darkGreen, 20);
+                transition: all 0.2s ease;
+            }
+
+            @include minSmall {
+                font-size: 0.8rem;
+
+                padding: 0 0 10px 0;
+
+                &:hover {
+                    border-bottom: solid 2px white;
+                    transition: all 0.2s ease;
+                    padding-bottom: 15px;
+                    background: none;
+                    outline: none;
+                }
+            }
+
+
         }
     }
 }

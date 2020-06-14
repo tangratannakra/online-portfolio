@@ -18,5 +18,5 @@ function timeLineHandler() {
     const revealClients = new RevealOnScroll('.testimonial', '.tech-stack__ul');
 
     const cv = new cvList();
-    //const gitHubPrjs = new gitHubProjects();
+    // const gitHubPrjs = new gitHubProjects();
 }

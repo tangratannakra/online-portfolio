@@ -13,8 +13,12 @@ menuItems.forEach(item => item.addEventListener('click', (item) => {
     scrollRevealHandler(item);
 }));
 
+
 function menuTogglerHandler() {
-    menuContent.classList.toggle('menu-visible');
+
+    if (window.innerWidth <= 767) {
+        menuContent.classList.toggle('menu-visible');
+    }
 }
 
 function scrollRevealHandler(item) {
@@ -29,10 +33,8 @@ function scrollRevealHandler(item) {
             scrollposition = '#projects';
             break;
         case 'cv-trigger':
-            console.log('in');
             scrollposition = '#certificates';
             break;
-        default:
     }
 
     gsap.to(window, {
@@ -40,4 +42,6 @@ function scrollRevealHandler(item) {
         scrollTo: `${scrollposition}`
     });
 
+    menuContent.classList.toggle('menu-visible');
+    menuToggler.checked = false;
 }
