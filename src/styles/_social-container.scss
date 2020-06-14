@@ -1,10 +1,6 @@
 .social-icon {
     &__container {
         display: flex;
-
-        &--vertical {
-            flex-direction: column;
-        }
     }
 
     &__item {
@@ -16,12 +12,15 @@
         }
 
         overflow: hidden;
-
-        // background-color: black;
         position: relative;
-        display: hidden;
+    }
+}
 
+.social-icon__container--vertical {
+    flex-direction: column;
 
+    &:first-child {
+        margin: 10px;
     }
 }
 
