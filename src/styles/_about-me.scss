@@ -38,6 +38,7 @@
         display: flex;
         justify-content: center;
         margin-bottom: 25px;
+        width: 40%;
 
 
         @include minSmall {
@@ -52,6 +53,8 @@
         }
 
     }
+
+    &__content {}
 }
 
 

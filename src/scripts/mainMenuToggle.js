@@ -42,6 +42,10 @@ function scrollRevealHandler(item) {
         scrollTo: `${scrollposition}`
     });
 
-    menuContent.classList.toggle('menu-visible');
-    menuToggler.checked = false;
+
+    if (window.innerWidth <= 767) {
+        menuContent.classList.toggle('menu-visible');
+        menuToggler.checked = false;
+    }
+
 }
