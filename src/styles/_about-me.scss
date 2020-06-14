@@ -1,21 +1,18 @@
-.about-me__section,
-.about-me__social,
-.about-me__heading {
-    padding-bottom: 25px;
+// .about-me__section,
+// .about-me__social,
+// .about-me__heading {
+//     padding-bottom: 25px;
 
-    &:hover {
-        h2 {
-            &:after {
-                content: ' ';
-                width: 100%;
-                transition: width 0.3s ease-out;
-            }
-        }
-    }
-}
-
-
-
+//     &:hover {
+//         h2 {
+//             &:after {
+//                 content: ' ';
+//                 width: 100%;
+//                 transition: width 0.3s ease-out;
+//             }
+//         }
+//     }
+// }
 
 .about-me {
     position: relative;

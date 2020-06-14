@@ -18,17 +18,22 @@
         }
 
         @include minLarge {
-            padding: 125px 10%;
+            padding: 150px 10%;
         }
     }
 
     &--middle {
+
+        @include minSmall {
+            padding: 100px 10%;
+        }
+
         @include minMedium {
             padding: 125px 20%;
         }
 
         @include minLarge {
-            padding: 125px 25%;
+            padding: 150px 25%;
         }
     }
 
