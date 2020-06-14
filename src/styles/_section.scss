@@ -6,14 +6,29 @@
 .section {
     width: 100%;
     padding: 50px 25px 75px 25px;
-    // min-height: 100vh;
-    background-color: #fdfdfd;
     background-image: none;
 
+    &__title {
+        padding-bottom: 50px;
+    }
 
     &--big {
+        @include minMedium {
+            padding: 125px 8%;
+        }
+
         @include minLarge {
-            padding: 50px 8%;
+            padding: 125px 10%;
+        }
+    }
+
+    &--middle {
+        @include minMedium {
+            padding: 125px 20%;
+        }
+
+        @include minLarge {
+            padding: 125px 25%;
         }
     }
 
@@ -21,17 +36,10 @@
         margin-bottom: 25px;
     }
 
-    @include minSmall {
-        color: black;
-    }
 
     &__left {
         margin-bottom: 50px;
         padding-top: 25px;
-
-        @include minSmall {
-            margin-bottom: 0px;
-        }
 
         &>div {
             margin-bottom: 25px;
@@ -41,12 +49,11 @@
             }
         }
 
-
-
         @include minSmall {
             padding-top: 0px;
             width: 50%;
             padding-right: 30px;
+            margin-bottom: 0px;
         }
 
         @include minLarge {
