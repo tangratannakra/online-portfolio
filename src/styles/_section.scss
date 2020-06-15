@@ -1,6 +1,8 @@
-#testimonial {
+#testimonial,
+#certificates {
     background-image: url('../img/background-white.jpg');
     background-size: cover;
+    border-bottom: 5px solid $lightGrey;
 }
 
 .section {

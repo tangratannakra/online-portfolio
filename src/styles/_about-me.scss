@@ -15,18 +15,14 @@
 
     &__thumb {
         width: 100%;
+        background-image: url(../img/bio.jpg);
+        background-size: cover;
+        background-position: center;
 
         @include minSmall {
-            padding: 8%;
             width: 40%;
             padding: 25
         }
-
-        img {
-            width: 100%;
-            height: auto;
-        }
-
     }
 
     &__content {
@@ -37,11 +33,10 @@
 
         @include minSmall {
             width: 60%;
-            padding: 0 0px 0px 0px;
         }
 
         @include minLarge {
-            padding: 0 8% 0px 0px;
+            padding: 0 8% 0px 8%;
         }
     }
 }

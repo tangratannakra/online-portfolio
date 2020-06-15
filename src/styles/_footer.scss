@@ -1,13 +1,18 @@
 footer {
+    position: relative;
     width: 100%;
     padding: 25px;
     color: white;
-    background-color: $mainBlue;
-    opacity: 0.9;
     border-top: 5px solid $green; // background-image: linear-gradient($yellow, $orange);
     display: flex;
     justify-content: space-between;
     overflow: hidden;
+    z-index: 3;
+    background: $mainBlue;
+
+    svg {
+        color: rgba(255, 255, 255, 0.9);
+    }
 }
 
 .footer__title {
