@@ -1,16 +1,15 @@
 .social-icon {
     &__container {
         display: flex;
+
+        &:first-child {
+            margin: 10px 10px 10px 0px;
+        }
     }
 
     &__item {
         margin: 10px;
         width: 24px;
-
-        &:first-child {
-            margin: 10px 10px 10px 0px;
-        }
-
         overflow: hidden;
         position: relative;
     }

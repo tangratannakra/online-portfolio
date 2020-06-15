@@ -89,7 +89,6 @@
     }
 
     &__keywords {
-        margin: 50px 0px 0px;
         display: none;
         transform: rotate(270deg);
         transform-origin: 0 0;
@@ -101,13 +100,38 @@
             bottom: 0;
             left: 0px;
 
-            h4 {}
+            h4 {
+                margin-left: 10px;
+                margin-top: 18px;
+                font-size: 1rem;
+            }
         }
     }
 
     &__social {
+        display: none;
         position: fixed;
         left: 0px;
+        top: 10vh;
+
+        svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        @include minSmall {
+            display: block;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: -10vh;
+            left: 50%;
+            width: 1px;
+            height: 10vh;
+            background-color: $darkGreen;
+        }
     }
 
     &__scroller {
