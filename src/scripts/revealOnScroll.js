@@ -17,7 +17,6 @@ class RevealOnScroll {
     }
 
     reveal(what, when) {
-
         gsap.to(`${what}`, {
             scrollTrigger: {
                 trigger: `${when}`,
@@ -27,8 +26,6 @@ class RevealOnScroll {
             duration: 1
         });
     }
-
-
 }
 
 export default RevealOnScroll;
