@@ -2,22 +2,35 @@
 
     &__ul {
         list-style: none;
+        padding-top: 25px;
+
+        li.tech-stack__ul--title {
+            display: block;
+            font-size: 1.1rem;
+            font-weight: 700;
+            padding-bottom: 15px;
+        }
 
         li {
             display: inline-block;
-            font-size: 1.2rem;
-            font-weight: 600;
-            padding-bottom: 25px;
+            font-size: 1.1rem;
+            font-weight: 500;
 
+        }
+
+        li:not(.tech-stack__ul--title) {
             &:after {
                 content: " / ";
             }
         }
 
+
+        ul {
+            padding-bottom: 50px;
+        }
+
         ul:last-of-type {
-            li {
-                padding-bottom: 0px;
-            }
+            padding-bottom: 0px;
         }
 
     }
