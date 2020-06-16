@@ -19,8 +19,7 @@ class RevealOnScroll {
     }
 
     hideInitialy() {
-        const element = document.querySelector(this.revealElement);
-        element.style.opacity = "0";
+        document.querySelector(this.revealElement).style.opacity = "0";
     }
 
     revealOnScroll() {
@@ -29,15 +28,11 @@ class RevealOnScroll {
             if (window.scrollY + this.browserHeight > elementReveal.offsetTop) {
                 let scrollPercent = (elementReveal.getBoundingClientRect().top / this.browserHeight) * 100;
                 if (scrollPercent < 95) {
-
                     this.served = true;
-
                     gsap.to(`${this.revealElement}`, {
                         opacity: 1,
-                        duration: 0.8
+                        duration: 1
                     });
-
-
                 }
             }
         }

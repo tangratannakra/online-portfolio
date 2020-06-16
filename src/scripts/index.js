@@ -19,5 +19,5 @@ function timeLineHandler() {
     const recentPr = new RecentProjects;
 
     const cv = new cvList();
-    // const gitHubPrjs = new gitHubProjects();
+    const gitHubPrjs = new gitHubProjects();
 }

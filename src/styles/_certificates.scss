@@ -14,11 +14,14 @@
 
     &__title {
 
-
         h1 {
-            font-size: 1.1rem;
+            font-size: 0.9rem;
             margin-bottom: 0px;
             font-weight: 700;
+
+            @include minMedium {
+                font-size: 1.1rem;
+            }
         }
 
         a {

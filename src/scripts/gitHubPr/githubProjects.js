@@ -9,7 +9,7 @@ const axios = require('axios');
 const githubUrl = 'https://api.github.com/graphql';
 const token = 'e98e86086631ba898ed5ee5ea7cd0d3ee8fde5f0';
 const oauth = {
-  Authorization: 'bearer ' + 'e98e86086631ba898ed5ee5ea7cd0d3ee8fde5f0' //'token'
+  Authorization: 'bearer ' + '07d5c335f6d18ceee0c02b6fd8cb10a2e6e09653' //'token'
 };
 
 let served;
@@ -73,7 +73,6 @@ class GitHubContainer {
       })
       .then(function (response) {
         const gitProj = response.data.data.repositoryOwner.itemShowcase.items.edges; //arr
-
         gitProj.forEach(prj => {
           let gitProject = new GitProject(prj.node);
           gitContainer.appendChild(gitProject);
@@ -92,5 +91,7 @@ class GitHubContainer {
   };
 
 }
+
+
 
 export default GitHubContainer;
