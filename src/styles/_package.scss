@@ -30,12 +30,16 @@
 
 td.package__key {
     padding-left: 25px;
-    color: $lightBlue;
+    // color: $lightBlue;
+    color: lighten($mainBlue, $amount: 17);
+
     font-weight: bold;
 }
 
 td.package__value {
-    color: $darkGreen;
+    text-align: left;
+    // color: $darkGreen;
+    color: $green;
 }
 
 

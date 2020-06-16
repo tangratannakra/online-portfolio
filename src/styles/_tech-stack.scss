@@ -4,19 +4,23 @@
         list-style: none;
         padding-top: 25px;
 
-        li.tech-stack__ul--title {
-            display: block;
-            font-size: 1.1rem;
-            font-weight: 700;
-            padding-bottom: 15px;
-        }
-
         li {
             display: inline-block;
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 500;
 
         }
+
+        li.tech-stack__ul--title {
+            display: block;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            padding-bottom: 10px;
+            color: $darkGrey;
+        }
+
+
 
         li:not(.tech-stack__ul--title) {
             &:after {

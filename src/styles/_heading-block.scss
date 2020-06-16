@@ -23,8 +23,6 @@
     justify-content: space-between;
     position: relative;
 
-    &__menu {}
-
     &__subtitle {
         // opacity: 0;
         font-size: 1rem;
@@ -58,9 +56,11 @@
 
     &__title {
         font-size: 2.3rem;
-        padding: 20vh 0 0 0px;
+        padding: 8vh 0 0 0px;
+
 
         @include minSmall {
+            padding: 20vh 0 0 0px;
             // margin: 15px 0px 10px 0px;
             font-size: 3.8rem;
             width: 100%;
@@ -72,19 +72,23 @@
         }
 
         @include minLarge {
-            margin-right: 20vh;
+            padding: 25vh 0 0 0px;
+            margin-right: 30vh;
         }
     }
 
     &__slogan {
-        font-size: 1.3rem;
+        font-size: 1rem;
+        font-weight: 600;
         margin-top: 25px;
         width: 100%;
+        color: $mainGrey;
 
         @include minSmall {
+            font-size: 1.1rem;
             position: absolute;
             bottom: 0px;
-            right: 15%;
+            right: 20%;
         }
     }
 

@@ -9,7 +9,7 @@ const axios = require('axios');
 const githubUrl = 'https://api.github.com/graphql';
 const token = 'e98e86086631ba898ed5ee5ea7cd0d3ee8fde5f0';
 const oauth = {
-  Authorization: 'bearer ' + token
+  Authorization: 'bearer ' + 'e98e86086631ba898ed5ee5ea7cd0d3ee8fde5f0' //'token'
 };
 
 let served;

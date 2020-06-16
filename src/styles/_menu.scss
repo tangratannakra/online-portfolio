@@ -133,9 +133,9 @@
 
     li {
         display: block;
-        color: white;
         list-style-position: inside;
         margin-bottom: 25px;
+        color: $lightGrey;
 
         @include minSmall {
             display: flex;
@@ -155,7 +155,9 @@
             padding: 20px;
             text-align: center;
 
+
             &:hover {
+                color: white;
                 outline-offset: 10px;
                 outline: 2px solid white;
                 background-color: darken($darkGreen, 20);
@@ -166,6 +168,7 @@
                 font-size: 0.8rem;
                 padding: 10px;
                 position: relative;
+                color: $lightGrey;
 
                 &:hover {
                     transition: all 0.2s ease;
