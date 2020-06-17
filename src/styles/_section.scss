@@ -29,7 +29,7 @@
             right: 0px;
             width: 65%;
             height: 100%;
-            background-color: rgba($yellow, 1);
+            background-color: rgba($yellowDark, 1);
             z-index: -1;
         }
     }
@@ -54,7 +54,7 @@
             right: 0px;
             width: 65%;
             height: 100%;
-            background: linear-gradient(rgba($green, 0.3), rgba($green, 0.5), rgba($green, 0.7), rgba($green, 1)), url(../img/letters.jpg);
+            background: linear-gradient(rgba($green, 0.6), rgba($green, 0.6), rgba($green, 0.7), rgba($green, 1)), url(../img/letters.jpg);
             background-position: center bottom;
             background-repeat: no-repeat;
 
@@ -166,7 +166,7 @@
         padding-top: 25px;
 
         &>div {
-            margin-bottom: 75px;
+            margin-bottom: 25px;
 
             &:last-child {
                 margin-bottom: 0px;

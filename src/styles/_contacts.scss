@@ -74,8 +74,10 @@
         padding: 1rem 3rem;
         text-decoration: none;
         font-weight: 900;
-        background-color: darken($yellow, 10);
-        transition: all 0.4s ease;
+        background-color: $yellow;
+        transition: all 0.3s ease;
+        box-shadow: 0px 3px 10px $darkGreen;
+        text-transform: capitalize;
 
         &:active {
             color: white;
@@ -84,8 +86,10 @@
         }
 
         &:hover {
-            // background-color: lighten($orange, 15);
-            padding: 1rem 4rem;
+            border-radius: 5px;
+            padding: 1rem 3.5rem;
+            box-shadow: 0px 5px 10px $darkGreen;
+            transform: translateY(-5px);
         }
 
     }
