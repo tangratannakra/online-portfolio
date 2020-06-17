@@ -16,3 +16,15 @@
         @content;
     }
 }
+
+@mixin flex--cc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex--rc {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}

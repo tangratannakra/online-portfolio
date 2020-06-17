@@ -4,6 +4,11 @@
     flex-direction: column;
     justify-content: center;
 
+    strong {
+        padding: 3px;
+        color: $darkGrey;
+    }
+
     p.heading {
         width: 70%;
     }
