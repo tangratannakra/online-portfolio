@@ -1,21 +1,52 @@
 #contacts {
     text-align: center;
+
+    @media (max-width: 767px) {
+        background-color: rgba($green, 0.8);
+    }
+
+    .section__right {
+        padding: 0px;
+
+        @include minSmall {
+            padding: 3%;
+        }
+    }
 }
+
 
 .contacts__section {
 
     ul {
-        padding-left: 20px;
-        margin: 25px 0px;
-        // list-style: none;
+        display: inline-block;
+        padding: 25px;
         text-align: left;
-        padding: 0 25%;
+
+
+        @include minSmall {
+            // background-color: rgba($green, 0.8);
+            margin: 50px 0px 25px;
+            padding: 10px 7%;
+            -moz-column-count: 2;
+            -moz-column-gap: 50px;
+            -webkit-column-count: 2;
+            -webkit-column-gap: 50px;
+            column-count: 2;
+            column-gap: 50px;
+        }
+
     }
 
     li {
         padding-bottom: 15px;
         line-height: 1.5rem;
+        list-style-position: inside;
 
+
+    }
+
+    p {
+        padding-bottom: 50px;
     }
 
     h2 {
@@ -43,7 +74,7 @@
         padding: 1rem 3rem;
         text-decoration: none;
         font-weight: 900;
-        background-color: $yellow;
+        background-color: darken($yellow, 10);
         transition: all 0.4s ease;
 
         &:active {
@@ -53,8 +84,8 @@
         }
 
         &:hover {
-            background-color: darken($yellow, 10);
-            padding: 1rem 3.1rem;
+            // background-color: lighten($orange, 15);
+            padding: 1rem 4rem;
         }
 
     }

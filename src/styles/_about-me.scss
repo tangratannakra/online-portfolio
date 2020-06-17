@@ -20,13 +20,17 @@
 
     &__thumb {
         width: 100%;
-        background-image: url(../img/bio.jpg);
+        min-height: 40vh;
+        background-image: url(../img/astronaut-web.jpg);
         background-size: cover;
         background-position: center;
 
+        margin-bottom: 25px;
+
         @include minSmall {
             width: 40%;
-            padding: 25
+            margin-bottom: 0px;
+
         }
     }
 

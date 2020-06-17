@@ -36,9 +36,31 @@
 
 }
 
+
 #experience {
     background-color: lighten($lightGrey, 8);
 
+}
+
+#contacts {
+    position: relative;
+
+    @include minSmall {
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0px;
+            width: 65%;
+            height: 100%;
+            background: linear-gradient(rgba($green, 0.3), rgba($green, 0.5), rgba($green, 0.7), rgba($green, 1)), url(../img/letters.jpg);
+            background-position: center bottom;
+            background-repeat: no-repeat;
+
+            z-index: -1;
+        }
+    }
 }
 
 .section {
@@ -54,10 +76,6 @@
         @include minMedium {
             padding: 100px 8% 125px;
         }
-
-        // @include minLarge {
-        //     padding: 100px 10%;
-        // }
     }
 
     &--middle {
@@ -66,9 +84,9 @@
             padding: 100px 10%;
         }
 
-        @include minMedium {
-            padding: 100px 25%;
-        }
+        // @include minMedium {
+        //     padding: 100px 25%;
+        // }
 
         @include minLarge {
             // padding: 150px 25%;
