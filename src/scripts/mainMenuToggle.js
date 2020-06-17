@@ -1,76 +1,117 @@
 import gsap from 'gsap';
 import ScrollTo from 'gsap/ScrollToPlugin';
 import ScrollTrigger from "gsap/ScrollTrigger";
+import debounce from 'lodash/debounce';
 
 gsap.registerPlugin(ScrollTo);
 gsap.registerPlugin(ScrollTrigger);
 gsap.core.globals("ScrollTrigger", ScrollTrigger);
 
-const menuToggler = document.querySelector('.menu-hamburger__toggler');
-const menuContent = document.querySelector('.heading-nav__menu');
-const menuItems = document.querySelectorAll('.scroll-to');
-
-let menuVisibility;
-
-menuToggler.addEventListener('change', menuTogglerHandler);
-menuItems.forEach(item => item.addEventListener('click', (item) => {
-    scrollRevealHandler(item);
-}));
-
-
-function menuTogglerHandler() {
-    if (window.innerWidth <= 767) {
-        menuContent.classList.toggle('menu-visible');
-    }
-}
-
-function scrollRevealHandler(item) {
-    let scrollposition;
-    let position = item.target.id;
-
-    switch (position) {
-        case 'bio-trigger':
-            scrollposition = '#bio';
-            break;
-        case 'projects-trigger':
-            scrollposition = '#projects';
-            break;
-        case 'cert-trigger':
-            scrollposition = '#certificates';
-            break;
-        case 'contact-trigger':
-            scrollposition = '#contacts';
-            break;
+class Menu {
+    constructor() {
+        this.menuVisibility = true;
+        this.browserHeight = window.innerHeight;
+        this.browserWidth = window.innerWidth;
+        this.menu = document.querySelector(`.heading-nav__menu`);
+        this.menuItems = document.querySelectorAll('.scroll-to');
+        this.menuToggler = document.querySelector('.menu-hamburger__toggler');
+        this.hideMenuUnderFold();
+        this.hideRevealMenu();
+        this.events();
     }
 
-    gsap.to(window, {
-        duration: 1,
-        scrollTo: `${scrollposition}`
-    });
-
-
-    if (window.innerWidth <= 767) {
-        menuContent.classList.toggle('menu-visible');
-        menuToggler.checked = false;
+    events() {
+        window.addEventListener('scroll', this.scrollThrottle);
+        window.addEventListener("resize", debounce(() => {
+            this.browserHeight = window.innerHeight;
+            this.browserWidth = window.innerWidth;
+        }, 333));
+        this.menuItems.forEach(item => item.addEventListener('click', (item) => {
+            this.scrollToHandler(item.target.id);
+        }));
+        this.menuToggler.addEventListener('change', () => {
+            this.menuTogglerHandler();
+        });
     }
-}
 
+    //GSAP Animation - hide / reveal menu after trigger element;    
+    hideRevealMenu() {
+        ScrollTrigger.create({
+            trigger: "#bio",
+            start: "top 100px",
+            end: "top top-=10px",
+            scrub: true,
 
-function hideRevealMenu() {
-    ScrollTrigger.create({
-        trigger: "#bio",
-        start: "top 100px",
-        end: "top top-=10px",
-        scrub: true,
+            onEnter: () => {
+                this.menu.style.display = 'none';
+                this.menuVisibility = false;
+            },
+            onEnterBack: () => {
+                this.menu.style.display = 'flex';
+                this.menu.style.animation = 'none';
+                this.menuVisibility = true;
+            }
+        });
+    }
 
-        onEnter: () => {
-            menuContent.style.display = 'none';
-        },
-        onEnterBack: () => {
-            menuContent.style.display = 'flex';
-            menuContent.style.animation = 'none';
+    //hide menu if page reloaded at the middle of the page
+    hideMenuUnderFold() {
+        console.log(this.menu.offsetTop);
+        console.log(window.scrollY + this.browserHeight > this.menu.offsetTop);
+        if (this.menuVisibility === true) {
+            if (window.scrollY + this.browserHeight > this.menu.offsetTop) {
+                this.menu.style.display = 'none';
+                this.menuVisibility = false;
+            }
         }
-    });
+    }
+
+
+    //scrolTo positions when cliched on menu
+    scrollToHandler(itemID) {
+        let scrollposition;
+        let position = itemID;
+
+        switch (position) {
+            case 'bio-trigger':
+                scrollposition = '#bio';
+                break;
+            case 'projects-trigger':
+                scrollposition = '#projects';
+                break;
+            case 'cert-trigger':
+                scrollposition = '#certificates';
+                break;
+            case 'contact-trigger':
+                scrollposition = '#contacts';
+                break;
+        }
+
+        gsap.to(window, {
+            duration: 0.5,
+            scrollTo: `${scrollposition}`
+        });
+
+        if (window.innerWidth < 768) {
+            this.menu.classList.remove('menu-visible');
+            this.menuToggler.checked = false;
+        } else {
+            this.hideMenuUnderFold();
+        }
+    }
+
+    menuTogglerHandler() {
+        if (this.menuToggler.checked === true) {
+            if (this.menuVisibility === false & window.innerWidth < 768) {
+                this.menu.style.display = 'flex';
+            }
+            this.menu.classList.add('menu-visible');
+        } else {
+            this.menu.classList.remove('menu-visible');
+            this.menuToggler = false;
+        }
+    }
 }
 
-hideRevealMenu();
+
+export default Menu;

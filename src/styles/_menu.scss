@@ -197,6 +197,10 @@
     visibility: visible;
     transform: translateX(100%);
     opacity: 1;
-    transition: all 0.4s ease;
+    transition: all 0.3s ease;
     width: 100%;
+}
+
+.hide-menu {
+    display: none;
 }

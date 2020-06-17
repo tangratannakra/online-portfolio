@@ -2,7 +2,7 @@
 import '../styles/index.scss';
 
 import animation from './redShift';
-import toggler from './mainMenuToggle';
+import Menu from './mainMenuToggle';
 import cvList from './cvData/cvList';
 import gitHubProjects from './gitHubPr/githubProjects';
 import CertificatesList from './certificates/certificatesList';
@@ -10,6 +10,8 @@ import RecentProjects from './recentProjects/recentProjects';
 import RevealOnScroll from './revealOnScroll';
 
 document.addEventListener('DOMContentLoaded', timeLineHandler, false);
+
+const mainMenu = new Menu();
 
 function timeLineHandler() {
 
