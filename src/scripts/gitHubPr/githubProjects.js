@@ -1,43 +1,13 @@
+import {
+  default as response
+} from './gitData';
 import GitProject from './githubProject';
 import throttle from 'lodash/throttle';
 import debounce from 'lodash/debounce';
+import gsap from 'gsap';
 
 const gitContainer = document.getElementById('github-projects');
-
-//Fetching data from Github
-const axios = require('axios');
-const githubUrl = 'https://api.github.com/graphql';
-const token = 'e98e86086631ba898ed5ee5ea7cd0d3ee8fde5f0';
-const oauth = {
-  Authorization: 'bearer ' + '07d5c335f6d18ceee0c02b6fd8cb10a2e6e09653' //'token'
-};
-
 let served;
-const query = `{
-    repositoryOwner(login: "tangratannakra") {
-      ... on ProfileOwner {
-        pinnedItemsRemaining
-        itemShowcase {
-          items(first: 10) {
-            totalCount
-            edges {
-              node {
-                ... on Repository {
-                  name
-                  description
-                  homepageUrl
-                  languages(first: 10) {
-                    totalCount
-                  }
-                }
-              }
-            }
-          }
-          hasPinnedItems
-        }
-      }
-    }
-  }`;
 
 class GitHubContainer {
   constructor() {
@@ -66,30 +36,27 @@ class GitHubContainer {
   }
 
   gitRequest() {
-    axios.post(githubUrl, {
-        query: query
-      }, {
-        headers: oauth
-      })
-      .then(function (response) {
-        const gitProj = response.data.data.repositoryOwner.itemShowcase.items.edges; //arr
-        gitProj.forEach(prj => {
-          let gitProject = new GitProject(prj.node);
-          gitContainer.appendChild(gitProject);
-          setTimeout(() => {
-            gitProject.className = 'github reveal--is-visible';
-          }, 1000);
+    response.forEach(prj => {
 
-        });
+      let gitProject = new GitProject(prj.node);
+      gitContainer.appendChild(gitProject);
 
-      })
-      .catch(function (error) {
-        console.log(error);
+      gsap.to('.github', {
+        opacity: 1,
+        duration: 1
       });
+
+      // setTimeout(() => {
+      //   gitProject.className = 'github reveal--is-visible';
+      // }, 1000);
+
+    });
+
+
+
 
 
   };
-
 }
 
 

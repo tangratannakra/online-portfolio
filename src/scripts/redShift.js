@@ -7,9 +7,10 @@ gsap.registerPlugin(ScrollTo);
 
 window.onload = introHandler;
 let tl = gsap.timeline();
+let tl2 = gsap.timeline();
 let played;
 
-tl.set(['#my-name-intro', '#animation-text-bottom', '.package', '#animation-text-top', '#animation-text-bottom'], {
+tl.set(['.heading-nav__menu', '#my-name-intro', '#animation-text-bottom', '.package', '#animation-text-top', '#animation-text-bottom'], {
     opacity: 0
 });
 
@@ -76,16 +77,6 @@ function timeLineHandler() {
             scale: 1
         }, 0.9);
 
-    // tl.set('#O', {
-    //         x: -150,
-    //         y: 75
-    //     }, 0.9)
-    //     .set('#O', {
-    //         x: 0,
-    //         y: 0
-    //     }, 1.2);
-
-
     tl.set('.N', {
             x: 0,
             y: -15
@@ -103,24 +94,6 @@ function timeLineHandler() {
         .set('.N', {
             rotate: 0
         }, 2.5);
-
-    // tl.set('#E', {
-    //         x: -300,
-    //         y: -120
-    //     }, 2)
-    //     .set('#E', {
-    //         x: 0,
-    //         y: 0
-    //     }, 2.75);
-
-    // tl.set('#D', {
-    //         x: 50,
-    //         y: -50
-    //     }, 2.75)
-    //     .set('#D', {
-    //         x: 0,
-    //         y: 0
-    //     }, 3.1);
 }
 
 const scrollBtn = document.getElementById('scroller');
@@ -130,4 +103,9 @@ scrollBtn.addEventListener('click', () => {
         duration: 0.5,
         scrollTo: "#bio"
     });
+});
+
+tl2.to('.heading-nav__menu', {
+    opacity: 1,
+    duration: 3
 });

@@ -16,7 +16,7 @@ class Menu {
         this.menuItems = document.querySelectorAll('.scroll-to');
         this.menuToggler = document.querySelector('.menu-hamburger__toggler');
         this.hideMenuUnderFold();
-        this.hideRevealMenu();
+        this.hideRevealMenu(); //working
         this.events();
     }
 
@@ -56,10 +56,8 @@ class Menu {
 
     //hide menu if page reloaded at the middle of the page
     hideMenuUnderFold() {
-        console.log(this.menu.offsetTop);
-        console.log(window.scrollY + this.browserHeight > this.menu.offsetTop);
         if (this.menuVisibility === true) {
-            if (window.scrollY + this.browserHeight > this.menu.offsetTop) {
+            if (window.scrollY > this.browserHeight) {
                 this.menu.style.display = 'none';
                 this.menuVisibility = false;
             }

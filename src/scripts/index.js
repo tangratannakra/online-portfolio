@@ -14,12 +14,10 @@ document.addEventListener('DOMContentLoaded', timeLineHandler, false);
 const mainMenu = new Menu();
 
 function timeLineHandler() {
-
     const certificatesList = new CertificatesList();
     const revealCv = new RevealOnScroll("#cv-container", "#bio");
     const revealClients = new RevealOnScroll('.testimonial', '.tech-stack__ul');
     const recentPr = new RecentProjects;
-
     const cv = new cvList();
     const gitHubPrjs = new gitHubProjects();
 }

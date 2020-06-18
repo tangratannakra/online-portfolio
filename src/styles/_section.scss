@@ -107,7 +107,9 @@
             border: none;
 
             @include minSmall {
-                @include flex--rc;
+
+                @include flex--cc;
+                flex-direction: column;
             }
 
             @include minMedium {
