@@ -9,14 +9,13 @@ gsap.core.globals("ScrollTrigger", ScrollTrigger);
 
 class Menu {
     constructor() {
-        this.menuVisibility = true;
         this.browserHeight = window.innerHeight;
         this.browserWidth = window.innerWidth;
+
         this.menu = document.querySelector(`.heading-nav__menu`);
         this.menuItems = document.querySelectorAll('.scroll-to');
         this.menuToggler = document.querySelector('.menu-hamburger__toggler');
-        this.hideMenuUnderFold();
-        this.hideRevealMenu(); //working
+
         this.events();
     }
 
@@ -25,6 +24,11 @@ class Menu {
         window.addEventListener("resize", debounce(() => {
             this.browserHeight = window.innerHeight;
             this.browserWidth = window.innerWidth;
+            if (this.menu.classList.contains('menu-visible') && this.browserWidth > 768) {
+                this.menu.classList.remove('menu-visible');
+            } else if (this.menuToggler.checked && this.browserWidth < 768) {
+                this.menu.classList.add('menu-visible');
+            }
         }, 333));
         this.menuItems.forEach(item => item.addEventListener('click', (item) => {
             this.scrollToHandler(item.target.id);
@@ -32,36 +36,6 @@ class Menu {
         this.menuToggler.addEventListener('change', () => {
             this.menuTogglerHandler();
         });
-    }
-
-    //GSAP Animation - hide / reveal menu after trigger element;    
-    hideRevealMenu() {
-        ScrollTrigger.create({
-            trigger: "#bio",
-            start: "top 100px",
-            end: "top top-=10px",
-            scrub: true,
-
-            onEnter: () => {
-                this.menu.style.display = 'none';
-                this.menuVisibility = false;
-            },
-            onEnterBack: () => {
-                this.menu.style.display = 'flex';
-                this.menu.style.animation = 'none';
-                this.menuVisibility = true;
-            }
-        });
-    }
-
-    //hide menu if page reloaded at the middle of the page
-    hideMenuUnderFold() {
-        if (this.menuVisibility === true) {
-            if (window.scrollY > this.browserHeight) {
-                this.menu.style.display = 'none';
-                this.menuVisibility = false;
-            }
-        }
     }
 
 
@@ -93,21 +67,19 @@ class Menu {
         if (window.innerWidth < 768) {
             this.menu.classList.remove('menu-visible');
             this.menuToggler.checked = false;
-        } else {
-            this.hideMenuUnderFold();
         }
     }
 
     menuTogglerHandler() {
-        if (this.menuToggler.checked === true) {
-            if (this.menuVisibility === false & window.innerWidth < 768) {
-                this.menu.style.display = 'flex';
-            }
+
+        if (this.browserWidth < 768 && this.menuToggler.checked === true) {
             this.menu.classList.add('menu-visible');
+
         } else {
             this.menu.classList.remove('menu-visible');
-            this.menuToggler = false;
+            this.menuToggler.checked = false;
         }
+
     }
 }
 

@@ -69,9 +69,13 @@
     transform: rotate(90deg);
 }
 
-.heading-nav__menu--mobile {
-    @media (max-width:768px) {
-        display: flex;
+
+
+.heading-nav__menu {
+    display: none;
+
+    @media (max-width:767px) {
+        left: -100%;
         justify-content: center;
         transition: all 0.2s ease;
         width: 100%;
@@ -92,12 +96,29 @@
             justify-content: center;
         }
 
+        li {
+            display: block;
+            list-style-position: inside;
+            margin-bottom: 25px;
+            color: $lightGrey;
+        }
+
+        a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 20px;
+            text-align: center;
+
+
+            &:hover {
+                color: white;
+                background-color: darken($darkGreen, 20);
+                transition: all 0.2s ease;
+            }
+        }
     }
 
-}
-
-
-.heading-nav__menu {
     @include minSmall {
         display: flex;
         position: absolute;
@@ -134,8 +155,6 @@
         list-style: none;
         height: 100%;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
 
         @include minSmall {
             flex-direction: row;
@@ -145,9 +164,6 @@
     }
 
     li {
-        display: block;
-        list-style-position: inside;
-        margin-bottom: 25px;
         color: $lightGrey;
 
         @include minSmall {
@@ -167,15 +183,6 @@
             text-decoration: none;
             padding: 20px;
             text-align: center;
-
-
-            &:hover {
-                color: white;
-                outline-offset: 10px;
-                outline: 2px solid white;
-                background-color: darken($darkGreen, 20);
-                transition: all 0.2s ease;
-            }
 
             @include minSmall {
                 font-size: 0.8rem;
@@ -207,13 +214,15 @@
 }
 
 .menu-visible {
+    display: flex;
+    position: fixed;
     visibility: visible;
+    left: -100%;
+    top: 0;
+    height: 100%;
+    width: 100%;
     transform: translateX(100%);
     opacity: 1;
     transition: all 0.3s ease;
-    width: 100%;
-}
-
-.hide-menu {
-    display: none;
+    z-index: 3;
 }
