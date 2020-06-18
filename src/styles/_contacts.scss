@@ -17,34 +17,6 @@
 
 .contacts__section {
 
-    ul {
-        display: inline-block;
-        padding: 25px;
-        text-align: left;
-
-
-        @include minSmall {
-            // background-color: rgba($green, 0.8);
-            margin: 50px 0px 25px;
-            padding: 10px 7%;
-            -moz-column-count: 2;
-            -moz-column-gap: 50px;
-            -webkit-column-count: 2;
-            -webkit-column-gap: 50px;
-            column-count: 2;
-            column-gap: 50px;
-        }
-
-    }
-
-    li {
-        padding-bottom: 15px;
-        line-height: 1.5rem;
-        list-style-position: inside;
-
-
-    }
-
     p {
         padding-bottom: 50px;
     }
