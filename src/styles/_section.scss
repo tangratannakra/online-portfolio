@@ -42,27 +42,6 @@
 
 }
 
-#contacts {
-    position: relative;
-
-    @include minSmall {
-
-        &::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            right: 0px;
-            width: 65%;
-            height: 100%;
-            background: linear-gradient(rgba($green, 0.6), rgba($green, 0.6), rgba($green, 0.7), rgba($green, 1)), url(../img/letters.jpg);
-            background-position: center bottom;
-            background-repeat: no-repeat;
-
-            z-index: -1;
-        }
-    }
-}
-
 .section {
     width: 100%;
     padding: 50px 25px 75px 25px;

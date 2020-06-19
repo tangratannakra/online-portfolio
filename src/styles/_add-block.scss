@@ -1,29 +1,28 @@
 #add-block {
-    background-color: $darkGreen;
-
-    @include minSmall {
-        margin: 10vh;
-    }
-
+    background-color: lighten($lightGrey, 8);
+    border-bottom: 5px solid $lightGrey;
 
     ul {
         display: inline-block;
-        padding: 25px;
+        padding: 25px 0px;
         text-align: left;
         list-style: none;
         font-size: 0.9rem;
 
 
         @include minSmall {
-            // background-color: rgba($green, 0.8);
-            margin: 50px 0px 25px;
-            padding: 10px 7%;
+
+            padding: 25px 0px;
+
+        }
+
+        @include minMedium {
             -moz-column-count: 2;
-            -moz-column-gap: 50px;
+            -moz-column-gap: 100px;
             -webkit-column-count: 2;
-            -webkit-column-gap: 50px;
+            -webkit-column-gap: 100px;
             column-count: 2;
-            column-gap: 50px;
+            column-gap: 100px;
         }
 
     }
@@ -32,8 +31,32 @@
         padding-bottom: 15px;
         line-height: 1.5rem;
         list-style-position: inside;
+    }
+}
 
+.add-block {
+
+    &__thumb {
+        background-image: url('../img/story-board.jpg');
+        background-size: cover;
+        width: 100%;
+        min-height: 250px;
+
+        @include minMedium {
+            width: 40%;
+        }
 
     }
 
+    &__container {
+
+        @include minSmall {
+            margin: 2vw 5vw;
+        }
+
+        @include minLarge {
+
+            margin: 5vw 10vw;
+        }
+    }
 }
