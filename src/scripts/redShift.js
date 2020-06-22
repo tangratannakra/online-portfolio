@@ -5,17 +5,25 @@ import ScrollTo from 'gsap/ScrollToPlugin';
 gsap.registerPlugin(TextPlugin);
 gsap.registerPlugin(ScrollTo);
 
-window.onload = introHandler;
+// window.onload = introHandler + hideInitial;
 let tl = gsap.timeline();
 let tl2 = gsap.timeline();
 let played;
 
-tl.set(['.heading-nav__menu', '#my-name-intro', '#animation-text-bottom', '.package', '#animation-text-top', '#animation-text-bottom'], {
-    opacity: 0
+Promise.resolve(hideInitial()).then(() => {
+    setTimeout(introHandler, 500);
 });
 
-function introHandler() {
 
+function hideInitial() {
+    tl.set(['.heading-nav__menu', '#my-name-intro', '#animation-text-bottom', '.package', '#animation-text-top', '#animation-text-bottom'], {
+        opacity: 0
+    });
+}
+
+
+
+function introHandler() {
     tl.to('#text-type-in-intro', {
             duration: 1,
             text: "My name is",

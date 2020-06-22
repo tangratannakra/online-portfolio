@@ -1,4 +1,5 @@
 import gsap from "gsap";
+import 'lazysizes';
 class RecentProject {
   constructor(data, index) {
     this.recentPrElement;
@@ -14,7 +15,7 @@ class RecentProject {
 
     this.recentPrElement.innerHTML = `
     <div class="recentPr-entry__thumb">
-      <img src="${data.thumb}" alt="project thumb">
+      <img class="lazyload" data-srcset="${data.thumb}" alt="project thumb">
     </div>
     
     <div class="recentPr-entry__hover">
